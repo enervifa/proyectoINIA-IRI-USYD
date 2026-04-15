@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GMIC Uruguay | Water Modelling Tools</title>
-  <meta name="description" content="GMIC Uruguay tools for water quantity and quality management." />
+  <title>GMIC Uruguay | Herramientas de modelación del agua</title>
+  <meta name="description" content="Herramientas de GMIC Uruguay para la gestión de cantidad y calidad de agua." />
   <meta name="theme-color" content="#0f4c5c" />
 
   <!-- Favicon -->
@@ -13,7 +13,7 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="GMIC Uruguay" />
-  <meta property="og:description" content="Models, institutions, applications, and maps for water quantity and quality management in Uruguay." />
+  <meta property="og:description" content="Modelos, instituciones, aplicaciones y mapas para la gestión del agua en Uruguay." />
   <meta property="og:type" content="website" />
 
   <!-- Leaflet -->
@@ -80,12 +80,12 @@
     }
 
     .site-logo {
-      width: 72px;
-      height: 72px;
+      width: 150px;
+      height: 150px;
       object-fit: contain;
       background: white;
       border-radius: 12px;
-      padding: 0.3rem;
+      padding: 0.2rem;
       box-shadow: 0 4px 16px rgba(0,0,0,0.12);
       flex-shrink: 0;
     }
@@ -190,7 +190,7 @@
 
     .stat-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
       gap: 1rem;
       margin-top: 1rem;
     }
@@ -282,6 +282,16 @@
       font-size: 0.95rem;
     }
 
+    .catalogue-table th,
+    .catalogue-table td {
+      padding: 0.55rem 0.55rem;
+      font-size: 0.9rem;
+    }
+
+    .catalogue-table td:nth-child(2) {
+      min-width: 260px;
+    }
+
     th {
       background: #f0f6f8;
       color: var(--brand);
@@ -303,8 +313,289 @@
       margin: 0 0.3rem 0.3rem 0;
     }
 
-    .models-grid {
+    .count-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 2.1rem;
+      padding: 0.22rem 0.45rem;
+      border-radius: 8px;
+      background: #e8f2ff;
+      color: #164a7a;
+      font-weight: 800;
+    }
+
+    .resource-list {
       display: grid;
+      gap: 0.35rem;
+      margin: 0.65rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .resource-list li {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .resource-list a {
+      font-weight: 650;
+    }
+
+    .resource-authors {
+      display: block;
+      color: var(--muted);
+      margin-top: 0.1rem;
+    }
+
+    .resource-type {
+      color: var(--brand);
+      font-weight: 800;
+    }
+
+    .institution-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      align-items: center;
+    }
+
+    .institution-list a,
+    .institution-list span {
+      font-weight: 650;
+    }
+
+    .institution-separator {
+      color: var(--muted);
+    }
+
+    .metadata-button {
+      border: 1px solid var(--line);
+      background: white;
+      color: var(--brand);
+      border-radius: 8px;
+      padding: 0.4rem 0.55rem;
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .metadata-button:hover {
+      background: var(--accent);
+    }
+
+    .popup-resources {
+      margin-top: 0.45rem;
+    }
+
+    .drawer-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(31, 41, 55, 0.36);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 160ms ease;
+      z-index: 1000;
+    }
+
+    .drawer-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .metadata-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: min(440px, 100%);
+      height: 100vh;
+      background: white;
+      border-left: 1px solid var(--line);
+      box-shadow: -16px 0 34px rgba(31, 41, 55, 0.16);
+      transform: translateX(100%);
+      transition: transform 180ms ease;
+      z-index: 1001;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .metadata-drawer.open {
+      transform: translateX(0);
+    }
+
+    .drawer-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .drawer-head h3 {
+      margin: 0;
+    }
+
+    .drawer-close {
+      width: 2.2rem;
+      height: 2.2rem;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: white;
+      cursor: pointer;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .drawer-body {
+      padding: 1rem;
+      overflow: auto;
+    }
+
+    .drawer-note {
+      color: var(--muted);
+      margin: 0.35rem 0 0;
+      font-size: 0.92rem;
+    }
+
+    .map-legend {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      padding: 0.65rem 0.75rem;
+      color: var(--text);
+      line-height: 1.35;
+    }
+
+    .legend-row {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-top: 0.35rem;
+      font-size: 0.82rem;
+    }
+
+    .legend-swatch {
+      width: 0.9rem;
+      height: 0.9rem;
+      border-radius: 4px;
+      border: 1px solid rgba(31, 41, 55, 0.2);
+      flex: 0 0 auto;
+    }
+
+    .keyword-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 0.75rem 0 1rem;
+    }
+
+    .keyword-chip {
+      border-radius: 8px;
+      background: var(--accent);
+      color: var(--brand);
+      padding: 0.25rem 0.5rem;
+      font-size: 0.86rem;
+      font-weight: 750;
+    }
+
+    .node-diagram {
+      width: 100%;
+      min-height: 560px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #ffffff;
+      overflow: hidden;
+    }
+
+    .node-diagram text {
+      font-family: inherit;
+      font-size: 12px;
+      pointer-events: none;
+    }
+
+    .node-diagram .link {
+      stroke: #9db7c3;
+      stroke-width: 1.2;
+      opacity: 0.55;
+    }
+
+    .node-diagram .link.dimmed,
+    .node-diagram .node.dimmed,
+    .node-diagram .node-label.dimmed {
+      opacity: 0.12;
+    }
+
+    .node-diagram .link.highlighted {
+      stroke: #0f4c5c;
+      stroke-width: 2.6;
+      opacity: 0.9;
+    }
+
+    .node-diagram .node {
+      cursor: pointer;
+      transition: opacity 140ms ease;
+    }
+
+    .node-diagram .node.highlighted {
+      stroke: #111827;
+      stroke-width: 3;
+    }
+
+    .node-diagram .node-label {
+      transition: opacity 140ms ease;
+    }
+
+    .node-diagram .catchment-node {
+      fill: #0f4c5c;
+    }
+
+    .node-diagram .keyword-node {
+      fill: #f28e2b;
+    }
+
+    .network-detail {
+      margin-top: 0.85rem;
+      color: var(--muted);
+    }
+
+    .network-detail strong {
+      color: var(--text);
+    }
+
+    .histogram {
+      width: 100%;
+      min-height: 300px;
+      margin-top: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #ffffff;
+      overflow: hidden;
+    }
+
+    .histogram text {
+      font-family: inherit;
+      font-size: 12px;
+      fill: var(--text);
+    }
+
+    .histogram .bar {
+      fill: #2c7da0;
+    }
+
+    .site-banner {
+      padding: 0;
+    }
+
+    .site-banner img {
+      display: block;
+      width: 100%;
+      max-height: 260px;
+      object-fit: cover;
+    }
+
+    .models-grid {
+      display: none;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1rem;
       margin-top: 1rem;
@@ -329,6 +620,44 @@
       margin-bottom: 0.8rem;
     }
 
+    .about-text {
+      max-width: 88ch;
+    }
+
+    .about-text h3 {
+      margin-top: 0;
+      color: var(--brand);
+    }
+
+    .slide-toggle {
+      border: 1px solid var(--line);
+      background: white;
+      color: var(--brand);
+      border-radius: 8px;
+      padding: 0.75rem 0.9rem;
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+      margin-bottom: 1rem;
+    }
+
+    .slide-toggle:hover {
+      background: var(--accent);
+    }
+
+    .timeline-panel {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 220ms ease, opacity 180ms ease;
+    }
+
+    .timeline-panel.open {
+      max-height: 1600px;
+      opacity: 1;
+      margin-bottom: 1rem;
+    }
+
     footer {
       padding: 2rem 0 3rem;
       color: var(--muted);
@@ -350,6 +679,11 @@
       .hero-copy { padding-right: 0; }
       #map { height: 400px; }
 
+      .site-logo {
+        width: 112px;
+        height: 112px;
+      }
+
       nav {
         align-items: flex-start;
       }
@@ -369,11 +703,11 @@
         </div>
 
         <div class="nav-links">
-          <a href="#about">About</a>
-          <a href="#models">Models</a>
-          <a href="#map-section">Map</a>
-          <a href="#team">Team</a>
-          <a href="#contact">Contact</a>
+          <a href="#about">Acerca de</a>
+          <a href="#models">Modelos</a>
+          <a href="#map-section">Mapa</a>
+          <a href="#team">Instituciones</a>
+          <a href="#contact">Contacto</a>
         </div>
       </nav>
 
@@ -384,18 +718,19 @@
             GMIC es un espacio de colaboración interinstitucional que desarrolla y aplica modelos para analizar la cantidad y calidad del agua, apoyar la planificación y evaluar escenarios de gestión en cuencas hidrográficas del Uruguay.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#models">Explore models</a>
-            <a class="btn btn-secondary" href="#map-section">Open map</a>
+            <a class="btn btn-primary" href="#models">Explorar modelos</a>
+            <a class="btn btn-secondary" href="#map-section">Abrir mapa</a>
           </div>
         </div>
 
         <div class="hero-card stats">
-          <h2>At a glance</h2>
+          <h2>Resumen</h2>
           <div class="stat-grid">
-            <div class="stat"><strong id="statModels">0</strong><span>Models</span></div>
-            <div class="stat"><strong id="statInstitutions">0</strong><span>Institutions</span></div>
-            <div class="stat"><strong id="statThemes">0</strong><span>Themes</span></div>
-            <div class="stat"><strong id="statLocations">0</strong><span>Mapped sites</span></div>
+            <div class="stat"><strong id="statModels">0</strong><span>Modelos</span></div>
+            <div class="stat"><strong id="statInstitutions">0</strong><span>Instituciones</span></div>
+            <div class="stat"><strong id="statThemes">0</strong><span>Temas</span></div>
+            <div class="stat"><strong id="statAcademicWorks">0</strong><span>Trabajos académicos</span></div>
+            <div class="stat"><strong id="statTheses">0</strong><span>Tesis</span></div>
           </div>
         </div>
       </div>
@@ -407,32 +742,57 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <h2>About GMIC</h2>
-            <p>
-              This page organizes GMIC information into a format that is easy to maintain on GitHub Pages without a backend.
-            </p>
+            <h2>Acerca de GMIC</h2>
           </div>
+        </div>
+
+        <button class="slide-toggle" id="timelineToggle" type="button" aria-expanded="false" aria-controls="timelinePanel">
+          Ver l&iacute;nea de tiempo
+        </button>
+
+        <div class="about-text timeline-panel" id="timelinePanel">
+          <h3>L&iacute;nea de tiempo del grupo de modelaci&oacute;n de cuencas (GMIC)</h3>
+          <p>
+            <strong>2017</strong><br>
+            El antecedente principal del grupo se encuentra en el proyecto FPTA 341, <em>&ldquo;Contribuci&oacute;n del IRI a la gesti&oacute;n de riesgos asociados al clima en el sector agropecuario del Cono Sur&rdquo;</em>. En este marco se desarroll&oacute; una experiencia de modelado participativo (PM) con un enfoque innovador, donde los actores involucrados eran modeladores hidrol&oacute;gicos activos, mientras que el rol de los expertos se centr&oacute; en la facilitaci&oacute;n y el desarrollo de capacidades.
+          </p>
+          <p>
+            Esta etapa permiti&oacute; identificar desaf&iacute;os clave y avanzar en el trabajo sobre una cuenca piloto, promoviendo la modelaci&oacute;n conjunta entre actores de diversas instituciones. El proceso fue liderado por Willem Vervoort (Universidad de Sydney), junto a Flora Mer y Walter Baethgen del IRI, Columbia University.
+          </p>
+          <p>
+            <strong>2021</strong><br>
+            El trabajo iniciado en este proyecto se continu&oacute; y fortaleci&oacute; en el proyecto INIA FPTA 358, <em>&ldquo;Fortalecimiento de la red de investigaci&oacute;n de INIA en el manejo sostenible del agua en agricultura y forestaci&oacute;n&rdquo;</em>. En esta etapa se consolid&oacute; el uso de modelos hidrol&oacute;gicos, el desarrollo de herramientas aplicadas y el trabajo interdisciplinario que hoy caracteriza al grupo GMIC.
+          </p>
+          <p>
+            <strong>Actualidad: contin&uacute;a la colaboraci&oacute;n</strong><br>
+            Si bien la web y algunos recursos asociados no se encuentran en actualizaci&oacute;n continua, el trabajo de modelaci&oacute;n se ha expandido a nuevas cuencas y l&iacute;neas de investigaci&oacute;n. El grupo mantiene instancias peri&oacute;dicas de encuentro para el intercambio de experiencias, resultados y desaf&iacute;os.
+          </p>
+          <p>
+            Como resultado de este proceso, se han generado materiales de capacitaci&oacute;n y herramientas de acceso abierto vinculadas al uso del modelo SWAT en Uruguay, particularmente en la subcuenca Santa Luc&iacute;a.
+          </p>
         </div>
 
         <div class="grid-2">
           <div class="card">
-            <h3>What this page does</h3>
+            <h3>Highlights del grupo</h3>
             <ul>
-              <li>Simple project description</li>
-              <li>Searchable model metadata table</li>
-              <li>Interactive map of institutions and case studies</li>
-              <li>Cards for each model with links and keywords</li>
+              <li>Aplicaci&oacute;n de modelos hidrol&oacute;gicos (SWAT) a escala de cuenca en Uruguay</li>
+              <li>Integraci&oacute;n de datos de monitoreo, informaci&oacute;n satelital y modelaci&oacute;n</li>
+              <li>Evaluaci&oacute;n de impactos del cambio de uso del suelo y la variabilidad clim&aacute;tica</li>
+              <li>Desarrollo de escenarios para apoyar la toma de decisiones</li>
+              <li>Trabajo interdisciplinario entre academia, instituciones p&uacute;blicas y sector productivo</li>
             </ul>
           </div>
 
           <div class="card">
-            <h3>How to update it</h3>
-            <p>
-              Edit one JSON file with model metadata. The table, cards, statistics, and map update automatically.
-            </p>
-            <p>
-              You can also add GeoJSON files for catchments and connect them through the <code>map_link</code> field.
-            </p>
+            <h3>Cursos y capacitaci&oacute;n</h3>
+            <ul>
+              <li>Instancias de formaci&oacute;n en modelaci&oacute;n hidrol&oacute;gica coordinadas por Willem Vervoort</li>
+              <li>Fortalecimiento de capacidades t&eacute;cnicas en Uruguay</li>
+              <li>Promoci&oacute;n del uso de herramientas de modelaci&oacute;n para la gesti&oacute;n sostenible del agua a escala de cuenca</li>
+              <li>Material de cursos disponible en <a href="https://osf.io/uqb5j/" target="_blank" rel="noopener">OSF</a></li>
+              <li>Pr&oacute;ximos cursos: estate atento!</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -442,31 +802,32 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <h2>Model catalogue</h2>
-            <p>Filter by name, theme, or institution. Click links to access more information.</p>
+            <h2>Modelos desarrollados</h2>
+            <p>Filtra por nombre, tema o modelo SWAT. Usa metadatos para ver publicaciones, informes y proyectos asociados.</p>
           </div>
         </div>
 
         <div class="filters">
-          <input id="searchInput" type="text" placeholder="Search model, theme, institution, application..." />
+          <input id="searchInput" type="text" placeholder="Buscar modelo, tema o modelo SWAT..." />
           <select id="themeFilter">
-            <option value="">All themes</option>
+            <option value="">Todos los temas</option>
           </select>
           <select id="institutionFilter">
-            <option value="">All institutions</option>
+            <option value="">Todas las instituciones</option>
           </select>
         </div>
 
         <div class="card" style="overflow:auto; padding: 0;">
-          <table>
+          <table class="catalogue-table">
             <thead>
               <tr>
-                <th>Model</th>
-                <th>Theme</th>
-                <th>Institution</th>
-                <th>Scale</th>
-                <th>Inputs</th>
-                <th>Status</th>
+                <th>Modelo</th>
+                <th>Temas</th>
+                <th>Escala</th>
+                <th>Modelo SWAT</th>
+                <th>N. productos</th>
+                <th>Metadatos</th>
+                <th>A la fecha</th>
               </tr>
             </thead>
             <tbody id="modelsTableBody"></tbody>
@@ -481,12 +842,30 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <h2>Map</h2>
-            <p>Shows institutions, study sites, and catchments from coordinates or GeoJSON files.</p>
+            <h2>Mapa</h2>
+            <p>Muestra cuencas y sitios de estudio a partir de coordenadas o archivos GeoJSON.</p>
           </div>
         </div>
         <div class="card">
           <div id="map"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="keywords-section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Investigaci&oacute;n</h2>
+            <p>Cuencas y temas de estudio. Seleccione un nodo para resaltar sus conexiones.</p>
+          </div>
+        </div>
+        <div class="card">
+          <svg class="node-diagram" id="keywordNetwork" role="img" aria-label="Red de cuencas y palabras clave"></svg>
+          <p class="network-detail" id="keywordNetworkDetail">Selecciona una cuenca o una palabra clave para ver sus conexiones.</p>
+          <h3>Publicaciones y productos por a&ntilde;o</h3>
+          <p class="drawer-note"></p>
+          <svg class="histogram" id="publicationHistogram" role="img" aria-label="Histograma de publicaciones y productos por año"></svg>
         </div>
       </div>
     </section>
@@ -497,13 +876,13 @@
           <div>
             <h2>Instituciones colaboradoras</h2>
             <p>
-              Investigadores y técnicos de UdelaR, Ministerio de Ambiente, MGAP, INIA, IRI, Columbia University y la Universidad de Sídney.
+              GMIC reúne instituciones académicas, organismos públicos y actores del territorio con el objetivo de fortalecer la gestión sostenible de los recursos hídricos mediante el uso de modelos hidrológicos a escala de cuenca y el trabajo interdisciplinario.
             </p>
           </div>
         </div>
         <div class="card" id="teamBlock">
-          <p><strong>Example institutions:</strong> INIA, Universidad de la República, University of Sydney, IRI and collaborating agencies.</p>
-          <p>You can also place partner logos here using a responsive grid.</p>
+          <p><strong>Instituciones:</strong></p>
+          <div class="institution-list" id="institutionList"></div>
         </div>
       </div>
     </section>
@@ -512,29 +891,47 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <h2>Contact</h2>
-            <p>eliananervif@gmail.com</p>
+            <h2>Contacto</h2>
+            <p>Eliana Nervi Faggiani (<a href="mailto:eliana.nervifaggiani@sydney.edu.au">eliana.nervifaggiani@sydney.edu.au</a>) · coordinación durante FPTA 358</p>
           </div>
         </div>
         <div class="card">
-          <p>Email: <a href="mailto:eliananervif@gmail.com">eliananervif@gmail.com</a></p>
-          <p>GitHub: <a href="https://github.com/enervifa/proyectoINIA-IRI-USYD" target="_blank" rel="noopener">Repository</a></p>
+          <p>GitHub: <a href="https://github.com/enervifa/proyectoINIA-IRI-USYD" target="_blank" rel="noopener">Repositorio</a></p>
         </div>
       </div>
     </section>
   </main>
 
+  <section class="site-banner" aria-label="Banner GMIC">
+    <img src="images/gmic-banner.png" alt="Grupo de Modelación Integrada de Cuencas sobre imagen aérea de una cuenca">
+  </section>
+
   <footer>
     <div class="container">
-      <p>GMIC Uruguay · Built as a simple GitHub Pages site using one HTML file and one JSON data source.</p>
+      <p>GMIC Uruguay · Sitio estático mantenido con HTML, JSON y archivos GeoJSON. Desarrollo asistido con GPT-5.4.</p>
     </div>
   </footer>
+
+  <div class="drawer-backdrop" id="metadataBackdrop" hidden></div>
+  <aside class="metadata-drawer" id="metadataDrawer" aria-hidden="true" aria-labelledby="metadataTitle">
+    <div class="drawer-head">
+      <div>
+        <h3 id="metadataTitle">Metadatos</h3>
+        <p class="drawer-note" id="metadataSubtitle"></p>
+      </div>
+      <button class="drawer-close" id="metadataClose" type="button" aria-label="Cerrar metadatos">x</button>
+    </div>
+    <div class="drawer-body" id="metadataBody"></div>
+  </aside>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
   
   <script>
     const DATA_URL = "data/models.json";
+    const RESOURCES_URL = "data/resources.json";
+    const INSTITUTIONS_URL = "data/institutions.json";
+    const KEYWORDS_URL = "data/keywords.json";
     const URUGUAY_VIEW = {
       center: [-32.8, -56.0],
       zoom: 7,
@@ -542,6 +939,9 @@
     };
 
     let allData = [];
+    let allResources = [];
+    let allInstitutions = [];
+    let allKeywords = [];
     let map;
     let markersLayer;
     let geojsonLayerGroup;
@@ -549,9 +949,69 @@
     async function loadData() {
       const response = await fetch(DATA_URL);
       if (!response.ok) {
-        throw new Error(`Could not load ${DATA_URL} (HTTP ${response.status})`);
+        throw new Error(`No se pudo cargar ${DATA_URL} (HTTP ${response.status})`);
       }
       return await response.json();
+    }
+
+    async function loadResources() {
+      const response = await fetch(RESOURCES_URL);
+      if (!response.ok) {
+        throw new Error(`No se pudo cargar ${RESOURCES_URL} (HTTP ${response.status})`);
+      }
+      return await response.json();
+    }
+
+    async function loadInstitutions() {
+      const response = await fetch(INSTITUTIONS_URL);
+      if (!response.ok) {
+        throw new Error(`No se pudo cargar ${INSTITUTIONS_URL} (HTTP ${response.status})`);
+      }
+      return await response.json();
+    }
+
+    async function loadKeywords() {
+      const response = await fetch(KEYWORDS_URL);
+      if (!response.ok) {
+        throw new Error(`No se pudo cargar ${KEYWORDS_URL} (HTTP ${response.status})`);
+      }
+      return await response.json();
+    }
+
+    function normalizeKey(value) {
+      return String(value || "")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+        .trim();
+    }
+
+    function attachResources(models, resources) {
+      const byId = new Map(resources.map(entry => [Number(entry.model_id), entry]));
+      const byName = new Map(resources.map(entry => [normalizeKey(entry.catchment), entry]));
+
+      return models.map(model => {
+        const entry = byId.get(Number(model.id)) || byName.get(normalizeKey(model.name)) || {};
+        const items = safeArray(entry.items);
+        return {
+          ...model,
+          resources: items,
+          project_count: items.length
+        };
+      });
+    }
+
+    function attachKeywords(models, keywords) {
+      const byId = new Map(keywords.map(entry => [Number(entry.model_id), entry]));
+      const byName = new Map(keywords.map(entry => [normalizeKey(entry.catchment), entry]));
+
+      return models.map(model => {
+        const entry = byId.get(Number(model.id)) || byName.get(normalizeKey(model.name)) || {};
+        return {
+          ...model,
+          node_keywords: safeArray(entry.keywords)
+        };
+      });
     }
 
     function safeArray(value) {
@@ -562,21 +1022,184 @@
       return [];
     }
 
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function getResources(d) {
+      return safeArray(d.resources).filter(item => item && item.title);
+    }
+
+    function resourceCount(d) {
+      return Number(d.project_count) || getResources(d).length;
+    }
+
+    function isAcademicWork(item) {
+      return /journal|conference|thesis/i.test(item.type || "");
+    }
+
+    function isThesis(item) {
+      return /thesis|tesis/i.test(`${item.type || ""} ${item.title || ""}`);
+    }
+
+    function resourceColor(count) {
+      if (count >= 5) return "#bd0026";
+      if (count >= 3) return "#f03b20";
+      if (count >= 2) return "#fd8d3c";
+      if (count >= 1) return "#feb24c";
+      return "#bdbdbd";
+    }
+
+    function isMicrocuencasLayer(d) {
+      return String(d.map_link || "").includes("microcuencas.geojson");
+    }
+
+    function splitThemes(value) {
+      return String(value || "")
+        .split(/[,/]/)
+        .map(item => themeLabel(item))
+        .filter(Boolean);
+    }
+
+    function themeLabel(value) {
+      const key = normalizeKey(value);
+      const labels = {
+        "water quality": "Calidad",
+        "water quantity": "Cantidad",
+        "calidad": "Calidad",
+        "cantidad": "Cantidad",
+        "cambios de uso de suelo": "Cambios de uso de suelo",
+        "variabilidad climatica": "Variabilidad climatica",
+        "zonas buffer": "Zonas buffer",
+        "riego": "Riego",
+        "modelo economico": "Modelo economico",
+        "agua subterranea": "Agua subterranea"
+      };
+      return labels[key] || String(value || "").trim();
+    }
+
+    function resourcesHtml(resources, compact = false) {
+      if (!resources.length) {
+        return compact ? "" : `<span class="empty-message">Sin metadatos por ahora.</span>`;
+      }
+
+      return `
+        <ul class="resource-list">
+          ${resources.map(item => {
+            const type = escapeHtml(item.type || "Link");
+            const title = escapeHtml(item.title);
+            const authors = item.authors ? `<span class="resource-authors">${escapeHtml(item.authors)}</span>` : "";
+            const year = item.year ? ` <span class="resource-authors">${escapeHtml(item.year)}</span>` : "";
+            const url = item.url ? escapeHtml(item.url) : "";
+            const label = url
+              ? `<a href="${url}" target="_blank" rel="noopener">${title}</a>`
+              : title;
+            return `<li><span class="resource-type">${type}:</span> ${label}${authors}${year}</li>`;
+          }).join("")}
+        </ul>
+      `;
+    }
+
+    function keywordsHtml(keywords) {
+      if (!keywords.length) {
+        return `<p class="drawer-note">Sin palabras clave cargadas.</p>`;
+      }
+
+      return `
+        <div class="keyword-chips">
+          ${keywords.map(keyword => `<span class="keyword-chip">${escapeHtml(keyword)}</span>`).join("")}
+        </div>
+      `;
+    }
+
+    function renderInstitutionList(institutions) {
+      const list = document.getElementById("institutionList");
+      if (!list) return;
+
+      list.innerHTML = institutions.map((institution, index) => {
+        const name = escapeHtml(institution.name || "");
+        const item = institution.url
+          ? `<a href="${escapeHtml(institution.url)}" target="_blank" rel="noopener">${name}</a>`
+          : `<span>${name}</span>`;
+        const separator = index < institutions.length - 1
+          ? `<span class="institution-separator">|</span>`
+          : "";
+        return `${item}${separator}`;
+      }).join("");
+    }
+
+    function metadataButtonHtml(d, label = "Ver") {
+      return `
+        <button class="metadata-button" type="button" data-metadata-id="${escapeHtml(d.id)}" onclick="openMetadata('${escapeHtml(d.id)}')">
+          ${escapeHtml(label)}
+        </button>
+      `;
+    }
+
+    function openMetadata(modelId) {
+      const d = allData.find(item => String(item.id) === String(modelId));
+      if (!d) return;
+
+      const resources = getResources(d);
+      const drawer = document.getElementById("metadataDrawer");
+      const backdrop = document.getElementById("metadataBackdrop");
+      document.getElementById("metadataTitle").textContent = d.table_name || d.name || "Metadatos";
+      document.getElementById("metadataSubtitle").textContent =
+        `${resourceCount(d)} producto${resourceCount(d) === 1 ? "" : "s"} vinculado${resourceCount(d) === 1 ? "" : "s"}`;
+      document.getElementById("metadataBody").innerHTML = `
+        <p class="drawer-note">Edita nombres y enlaces en <code>data/resources.json</code>.</p>
+        <h4>Palabras clave</h4>
+        <p class="drawer-note">Edita estas palabras en <code>data/keywords.json</code>.</p>
+        ${keywordsHtml(safeArray(d.node_keywords))}
+        <h4>Publicaciones, informes y proyectos</h4>
+        ${resourcesHtml(resources)}
+      `;
+
+      backdrop.hidden = false;
+      requestAnimationFrame(() => {
+        backdrop.classList.add("open");
+        drawer.classList.add("open");
+        drawer.setAttribute("aria-hidden", "false");
+      });
+    }
+
+    function closeMetadata() {
+      const drawer = document.getElementById("metadataDrawer");
+      const backdrop = document.getElementById("metadataBackdrop");
+      drawer.classList.remove("open");
+      backdrop.classList.remove("open");
+      drawer.setAttribute("aria-hidden", "true");
+      window.setTimeout(() => {
+        if (!backdrop.classList.contains("open")) {
+          backdrop.hidden = true;
+        }
+      }, 180);
+    }
+
     function popupHtml(d, featureProps = null) {
       const props = featureProps || {};
       const title = d.name || props.nombrec3 || props.popup || "Untitled";
       const region = d.region || d.location || props.nombrec3 || "";
-      const areaLine = props.area ? `Area: ${props.area} km²<br>` : "";
+      const areaLine = props.area ? `Area: ${escapeHtml(props.area)} km2<br>` : "";
+      const resources = getResources(d);
+      const count = resourceCount(d);
 
       return `
-        <strong>${title}</strong><br>
-        ${region}<br>
-        ${d.description || ""}<br>
+        <strong>${escapeHtml(title)}</strong><br>
+        ${escapeHtml(region)}<br>
+        ${escapeHtml(d.description || "")}<br>
         ${areaLine}
-        ${d.data_link ? `<a href="${d.data_link}" target="_blank" rel="noopener">Data</a><br>` : ""}
-        ${d.report_link ? `<a href="${d.report_link}" target="_blank" rel="noopener">Report</a><br>` : ""}
-        ${d.publication_link ? `<a href="${d.publication_link}" target="_blank" rel="noopener">Publication</a><br>` : ""}
-        ${(d.website || d.link) ? `<a href="${d.website || d.link}" target="_blank" rel="noopener">Website</a>` : ""}
+        <strong>${count}</strong> producto${count === 1 ? "" : "s"} vinculado${count === 1 ? "" : "s"}
+        <div class="popup-resources">${metadataButtonHtml(d, "Metadatos")}</div>
+        ${d.data_link ? `<a href="${escapeHtml(d.data_link)}" target="_blank" rel="noopener">Datos</a><br>` : ""}
+        ${d.report_link ? `<a href="${escapeHtml(d.report_link)}" target="_blank" rel="noopener">Informe</a><br>` : ""}
+        ${d.publication_link ? `<a href="${escapeHtml(d.publication_link)}" target="_blank" rel="noopener">Publicación</a><br>` : ""}
+        ${(d.website || d.link) ? `<a href="${escapeHtml(d.website || d.link)}" target="_blank" rel="noopener">Sitio web</a>` : ""}
       `;
     }
 
@@ -585,9 +1208,13 @@
       const themeValue = document.getElementById("themeFilter").value;
       const institutionValue = document.getElementById("institutionFilter").value;
 
-      return allData.filter(d => {
+      return allData.filter(d => d.show_in_catalogue !== false).filter(d => {
         const text = [
           d.name,
+          d.table_name,
+          d.table_themes,
+          d.swat_model,
+          d.active_to_date,
           d.theme,
           d.institution,
           d.scale,
@@ -595,14 +1222,15 @@
           d.description,
           ...(safeArray(d.inputs)),
           ...(safeArray(d.keywords)),
-          ...(safeArray(d.applications))
+          ...(safeArray(d.applications)),
+          ...getResources(d).flatMap(item => [item.type, item.title])
         ]
           .filter(Boolean)
           .join(" ")
           .toLowerCase();
 
         const matchesSearch = !searchValue || text.includes(searchValue);
-        const matchesTheme = !themeValue || d.theme === themeValue;
+        const matchesTheme = !themeValue || splitThemes(d.table_themes || d.theme).includes(themeValue);
         const matchesInstitution = !institutionValue || d.institution === institutionValue;
 
         return matchesSearch && matchesTheme && matchesInstitution;
@@ -613,11 +1241,12 @@
       const themeFilter = document.getElementById("themeFilter");
       const institutionFilter = document.getElementById("institutionFilter");
 
-      const themes = [...new Set(data.map(d => d.theme).filter(Boolean))].sort();
-      const institutions = [...new Set(data.map(d => d.institution).filter(Boolean))].sort();
+      const catalogueData = data.filter(d => d.show_in_catalogue !== false);
+      const themes = [...new Set(catalogueData.flatMap(d => splitThemes(d.table_themes || d.theme)))].sort();
+      const institutions = [...new Set(catalogueData.map(d => d.institution).filter(Boolean))].sort();
 
-      themeFilter.innerHTML = `<option value="">All themes</option>`;
-      institutionFilter.innerHTML = `<option value="">All institutions</option>`;
+      themeFilter.innerHTML = `<option value="">Todos los temas</option>`;
+      institutionFilter.innerHTML = `<option value="">Todas las instituciones</option>`;
 
       themes.forEach(theme => {
         const option = document.createElement("option");
@@ -635,16 +1264,16 @@
     }
 
     function renderStats(data) {
-      const institutions = new Set(data.map(d => d.institution).filter(Boolean));
-      const themes = new Set(data.map(d => d.theme).filter(Boolean));
-      const mappedSites = data.filter(d =>
-        (d.latitude && d.longitude) || d.map_link
-      ).length;
+      const catalogueData = data.filter(d => d.show_in_catalogue !== false);
+      const institutions = new Set(catalogueData.map(d => d.institution).filter(Boolean));
+      const themes = new Set(catalogueData.flatMap(d => splitThemes(d.table_themes || d.theme)));
+      const resources = catalogueData.flatMap(d => getResources(d));
 
-      document.getElementById("statModels").textContent = data.length;
+      document.getElementById("statModels").textContent = catalogueData.length;
       document.getElementById("statInstitutions").textContent = institutions.size;
       document.getElementById("statThemes").textContent = themes.size;
-      document.getElementById("statLocations").textContent = mappedSites;
+      document.getElementById("statAcademicWorks").textContent = resources.filter(isAcademicWork).length;
+      document.getElementById("statTheses").textContent = resources.filter(isThesis).length;
     }
 
     function renderModels() {
@@ -658,44 +1287,226 @@
       if (!filtered.length) {
         tbody.innerHTML = `
           <tr>
-            <td colspan="6" class="empty-message">No models match the selected filters.</td>
+            <td colspan="7" class="empty-message">No hay modelos que coincidan con los filtros seleccionados.</td>
           </tr>
         `;
         return;
       }
 
       filtered.forEach(d => {
-        const inputs = safeArray(d.inputs);
-        const keywords = safeArray(d.keywords);
+        const count = resourceCount(d);
 
         const row = document.createElement("tr");
         row.innerHTML = `
-          <td>
-            <strong>${d.name || ""}</strong>
-            ${(d.website || d.link) ? `<br><a href="${d.website || d.link}" target="_blank" rel="noopener">Open</a>` : ""}
-          </td>
-          <td>${d.theme || ""}</td>
-          <td>${d.institution || ""}</td>
-          <td>${d.scale || ""}</td>
-          <td>${inputs.join(", ")}</td>
-          <td>${d.status || ""}</td>
+          <td><strong>${escapeHtml(d.table_name || d.name || "")}</strong></td>
+          <td>${escapeHtml(d.table_themes || d.theme || "")}</td>
+          <td>${escapeHtml(d.table_scale || d.scale || "")}</td>
+          <td>${escapeHtml(d.swat_model || "")}</td>
+          <td><span class="count-pill" style="background:${resourceColor(count)}; color:${count >= 2 ? "white" : "#1f2937"}">${count}</span></td>
+          <td>${metadataButtonHtml(d)}</td>
+          <td>${escapeHtml(d.active_to_date || "")}</td>
         `;
         tbody.appendChild(row);
+      });
+    }
 
-        const card = document.createElement("div");
-        card.className = "model-card";
-        card.innerHTML = `
-          <h3>${d.name || ""}</h3>
-          <div class="meta">
-            ${d.institution || ""}${d.theme ? ` · ${d.theme}` : ""}${d.scale ? ` · ${d.scale}` : ""}
-          </div>
-          <p>${d.description || ""}</p>
-          <div>
-            ${keywords.map(k => `<span class="pill">${k}</span>`).join("")}
-          </div>
-          ${(d.website || d.link) ? `<p><a href="${d.website || d.link}" target="_blank" rel="noopener">Learn more</a></p>` : ""}
-        `;
-        cards.appendChild(card);
+    function renderKeywordNetwork() {
+      const svg = document.getElementById("keywordNetwork");
+      const detail = document.getElementById("keywordNetworkDetail");
+      if (!svg) return;
+
+      const data = allData
+        .filter(d => d.show_in_catalogue !== false)
+        .filter(d => safeArray(d.node_keywords).length);
+      const keywords = [...new Set(data.flatMap(d => safeArray(d.node_keywords)))].sort();
+      const connections = [];
+      const width = Math.max(svg.clientWidth || 960, 720);
+      const rowGap = 42;
+      const height = Math.max(560, Math.max(data.length, keywords.length) * rowGap + 80);
+      const leftX = 170;
+      const rightX = width - 210;
+      const catchmentStep = (height - 100) / Math.max(data.length - 1, 1);
+      const keywordStep = (height - 100) / Math.max(keywords.length - 1, 1);
+      const catchmentY = new Map(data.map((d, index) => [d.id, 50 + index * catchmentStep]));
+      const keywordY = new Map(keywords.map((keyword, index) => [keyword, 50 + index * keywordStep]));
+
+      svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+      svg.innerHTML = "";
+      if (detail) {
+        detail.textContent = "Selecciona una cuenca o una palabra clave para ver sus conexiones.";
+      }
+
+      const add = (tag, attrs, text = "") => {
+        const el = document.createElementNS("http://www.w3.org/2000/svg", tag);
+        Object.entries(attrs).forEach(([key, value]) => el.setAttribute(key, value));
+        if (text) el.textContent = text;
+        svg.appendChild(el);
+        return el;
+      };
+
+      data.forEach(d => {
+        safeArray(d.node_keywords).forEach(keyword => {
+          const y1 = catchmentY.get(d.id);
+          const y2 = keywordY.get(keyword);
+          const catchmentId = `catchment-${d.id}`;
+          const keywordId = `keyword-${normalizeKey(keyword).replace(/[^a-z0-9]+/g, "-")}`;
+          connections.push({
+            catchmentId,
+            keywordId,
+            catchmentName: d.table_name || d.name || "",
+            keyword
+          });
+          add("line", {
+            class: "link",
+            x1: leftX,
+            y1,
+            x2: rightX,
+            y2,
+            "data-catchment": catchmentId,
+            "data-keyword": keywordId
+          });
+        });
+      });
+
+      data.forEach(d => {
+        const y = catchmentY.get(d.id);
+        const nodeId = `catchment-${d.id}`;
+        const label = d.table_name || d.name || "";
+        add("circle", {
+          class: "node catchment-node",
+          cx: leftX,
+          cy: y,
+          r: 8,
+          tabindex: 0,
+          "data-node-id": nodeId,
+          "data-node-type": "catchment",
+          "aria-label": label
+        });
+        add("text", { class: "node-label", x: leftX - 14, y: y + 4, "text-anchor": "end", "data-node-id": nodeId }, label);
+      });
+
+      keywords.forEach(keyword => {
+        const y = keywordY.get(keyword);
+        const nodeId = `keyword-${normalizeKey(keyword).replace(/[^a-z0-9]+/g, "-")}`;
+        add("circle", {
+          class: "node keyword-node",
+          cx: rightX,
+          cy: y,
+          r: 8,
+          tabindex: 0,
+          "data-node-id": nodeId,
+          "data-node-type": "keyword",
+          "aria-label": keyword
+        });
+        add("text", { class: "node-label", x: rightX + 14, y: y + 4, "data-node-id": nodeId }, keyword);
+      });
+
+      function highlight(nodeId, nodeType) {
+        const related = connections.filter(connection =>
+          nodeType === "catchment"
+            ? connection.catchmentId === nodeId
+            : connection.keywordId === nodeId
+        );
+        const relatedIds = new Set(related.flatMap(connection => [connection.catchmentId, connection.keywordId]));
+        relatedIds.add(nodeId);
+
+        svg.querySelectorAll(".link").forEach(link => {
+          const isRelated = related.some(connection =>
+            link.dataset.catchment === connection.catchmentId &&
+            link.dataset.keyword === connection.keywordId
+          );
+          link.classList.toggle("highlighted", isRelated);
+          link.classList.toggle("dimmed", !isRelated);
+        });
+
+        svg.querySelectorAll(".node, .node-label").forEach(node => {
+          const isRelated = relatedIds.has(node.dataset.nodeId);
+          node.classList.toggle("highlighted", node.dataset.nodeId === nodeId);
+          node.classList.toggle("dimmed", !isRelated);
+        });
+
+        if (detail) {
+          if (nodeType === "catchment") {
+            const name = related[0]?.catchmentName || "";
+            const list = related.map(connection => connection.keyword).join(", ");
+            detail.innerHTML = `<strong>${escapeHtml(name)}</strong>: ${escapeHtml(list)}`;
+          } else {
+            const keyword = related[0]?.keyword || "";
+            const list = related.map(connection => connection.catchmentName).join(", ");
+            detail.innerHTML = `<strong>${escapeHtml(keyword)}</strong>: ${escapeHtml(list)}`;
+          }
+        }
+      }
+
+      svg.querySelectorAll(".node").forEach(node => {
+        node.addEventListener("mouseenter", () => highlight(node.dataset.nodeId, node.dataset.nodeType));
+        node.addEventListener("focus", () => highlight(node.dataset.nodeId, node.dataset.nodeType));
+        node.addEventListener("click", () => highlight(node.dataset.nodeId, node.dataset.nodeType));
+      });
+    }
+
+    function renderPublicationHistogram() {
+      const svg = document.getElementById("publicationHistogram");
+      if (!svg) return;
+
+      const rows = getFilteredData()
+        .flatMap(d => getResources(d))
+        .filter(item => Number.isInteger(Number(item.year)));
+      const counts = new Map();
+      rows.forEach(item => {
+        const year = Number(item.year);
+        counts.set(year, (counts.get(year) || 0) + 1);
+      });
+
+      const years = [...counts.keys()].sort((a, b) => a - b);
+      const width = Math.max(svg.clientWidth || 760, 520);
+      const height = 300;
+      const margin = { top: 24, right: 24, bottom: 44, left: 42 };
+      const innerWidth = width - margin.left - margin.right;
+      const innerHeight = height - margin.top - margin.bottom;
+      const maxCount = Math.max(...counts.values(), 1);
+      const barGap = 12;
+      const barWidth = years.length ? Math.max(18, (innerWidth - barGap * (years.length - 1)) / years.length) : 0;
+
+      svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+      svg.innerHTML = "";
+
+      const add = (tag, attrs, text = "") => {
+        const el = document.createElementNS("http://www.w3.org/2000/svg", tag);
+        Object.entries(attrs).forEach(([key, value]) => el.setAttribute(key, value));
+        if (text) el.textContent = text;
+        svg.appendChild(el);
+        return el;
+      };
+
+      add("line", {
+        x1: margin.left,
+        y1: margin.top + innerHeight,
+        x2: width - margin.right,
+        y2: margin.top + innerHeight,
+        stroke: "#9db7c3"
+      });
+      add("line", {
+        x1: margin.left,
+        y1: margin.top,
+        x2: margin.left,
+        y2: margin.top + innerHeight,
+        stroke: "#9db7c3"
+      });
+
+      if (!years.length) {
+        add("text", { x: width / 2, y: height / 2, "text-anchor": "middle" }, "Agrega años en data/resources.json para ver el histograma.");
+        return;
+      }
+
+      years.forEach((year, index) => {
+        const count = counts.get(year);
+        const x = margin.left + index * (barWidth + barGap);
+        const barHeight = (count / maxCount) * innerHeight;
+        const y = margin.top + innerHeight - barHeight;
+        add("rect", { class: "bar", x, y, width: barWidth, height: barHeight, rx: 4 });
+        add("text", { x: x + barWidth / 2, y: y - 6, "text-anchor": "middle" }, String(count));
+        add("text", { x: x + barWidth / 2, y: margin.top + innerHeight + 20, "text-anchor": "middle" }, String(year));
       });
     }
 
@@ -717,6 +1528,21 @@
 
       markersLayer = L.layerGroup().addTo(map);
       geojsonLayerGroup = L.layerGroup().addTo(map);
+
+      const legend = L.control({ position: "bottomright" });
+      legend.onAdd = function() {
+        const div = L.DomUtil.create("div", "map-legend");
+        div.innerHTML = `
+          <strong>Productos vinculados</strong>
+          <div class="legend-row"><span class="legend-swatch" style="background:${resourceColor(0)}"></span>0</div>
+          <div class="legend-row"><span class="legend-swatch" style="background:${resourceColor(1)}"></span>1</div>
+          <div class="legend-row"><span class="legend-swatch" style="background:${resourceColor(2)}"></span>2</div>
+          <div class="legend-row"><span class="legend-swatch" style="background:${resourceColor(3)}"></span>3-4</div>
+          <div class="legend-row"><span class="legend-swatch" style="background:${resourceColor(5)}"></span>5+</div>
+        `;
+        return div;
+      };
+      legend.addTo(map);
     }
 
     async function renderMap() {
@@ -727,26 +1553,13 @@
       geojsonLayerGroup.clearLayers();
 
       const bounds = L.latLngBounds([]);
+      const mapData = [...filtered].sort((a, b) =>
+        Number(isMicrocuencasLayer(a)) - Number(isMicrocuencasLayer(b))
+      );
 
-      for (const d of filtered) {
-        if (d.latitude && d.longitude) {
-          const lat = Number(d.latitude);
-          const lng = Number(d.longitude);
-
-          if (!Number.isNaN(lat) && !Number.isNaN(lng)) {
-            const marker = L.circleMarker([lat, lng], {
-              radius: 6,
-              color: "#0f4c5c",
-              weight: 2,
-              fillColor: "#2c7da0",
-              fillOpacity: 0.9
-            })
-              .addTo(markersLayer)
-              .bindPopup(popupHtml(d));
-
-            bounds.extend([lat, lng]);
-          }
-        }
+      for (const d of mapData) {
+        const count = resourceCount(d);
+        const color = resourceColor(count);
 
         if (d.map_link) {
           try {
@@ -757,21 +1570,25 @@
 
             const layer = L.geoJSON(geojsonData, {
               style: {
-                color: "#0057b8",
+                color: "#1f2937",
                 weight: 2,
-                fillColor: "#66c2a5",
-                fillOpacity: 0.30
+                fillColor: color,
+                fillOpacity: count ? 0.48 : 0.18
               },
               onEachFeature: function(feature, featureLayer) {
                 featureLayer.bindPopup(popupHtml(d, feature.properties));
               }
             }).addTo(geojsonLayerGroup);
 
+            if (isMicrocuencasLayer(d) && layer.bringToFront) {
+              layer.bringToFront();
+            }
+
             if (layer.getBounds && layer.getBounds().isValid()) {
               bounds.extend(layer.getBounds());
             }
           } catch (error) {
-            console.error(`Error loading ${d.map_link}:`, error);
+            console.error(`Error al cargar ${d.map_link}:`, error);
           }
         }
       }
@@ -785,34 +1602,75 @@
 
     async function initPage() {
       try {
-        allData = await loadData();
+        const models = await loadData();
+        allResources = await loadResources();
+        allInstitutions = await loadInstitutions();
+        allKeywords = await loadKeywords();
+        allData = attachKeywords(attachResources(models, allResources), allKeywords);
 
+        renderInstitutionList(allInstitutions);
         populateFilters(allData);
         renderStats(allData);
         renderModels();
         await renderMap();
+        renderKeywordNetwork();
+        renderPublicationHistogram();
 
         document.getElementById("searchInput").addEventListener("input", async () => {
           renderModels();
           await renderMap();
+          renderKeywordNetwork();
+          renderPublicationHistogram();
         });
 
         document.getElementById("themeFilter").addEventListener("change", async () => {
           renderModels();
           await renderMap();
+          renderKeywordNetwork();
+          renderPublicationHistogram();
         });
 
         document.getElementById("institutionFilter").addEventListener("change", async () => {
           renderModels();
           await renderMap();
+          renderKeywordNetwork();
+          renderPublicationHistogram();
+        });
+
+        window.addEventListener("resize", () => {
+          renderKeywordNetwork();
+          renderPublicationHistogram();
+        });
+
+        document.getElementById("timelineToggle").addEventListener("click", () => {
+          const panel = document.getElementById("timelinePanel");
+          const button = document.getElementById("timelineToggle");
+          const isOpen = panel.classList.toggle("open");
+          button.setAttribute("aria-expanded", String(isOpen));
+          button.innerHTML = isOpen
+            ? "Ocultar l&iacute;nea de tiempo"
+            : "Ver l&iacute;nea de tiempo";
+        });
+
+        document.addEventListener("click", event => {
+          const button = event.target.closest("[data-metadata-id]");
+          if (button) {
+            openMetadata(button.dataset.metadataId);
+          }
+        });
+
+        document.getElementById("metadataClose").addEventListener("click", closeMetadata);
+        document.getElementById("metadataBackdrop").addEventListener("click", closeMetadata);
+        document.addEventListener("keydown", event => {
+          if (event.key === "Escape") closeMetadata();
         });
       } catch (error) {
         console.error("Error initializing page:", error);
         document.getElementById("modelsTableBody").innerHTML = `
           <tr>
-            <td colspan="6">
-              Could not load site data.<br>
-              Path expected: <code>${DATA_URL}</code><br>
+            <td colspan="7">
+              No se pudieron cargar los datos del sitio.<br>
+              Ruta esperada: <code>${DATA_URL}</code><br>
               Error: <code>${error.message}</code>
             </td>
           </tr>

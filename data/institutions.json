@@ -1,0 +1,30 @@
+[
+  {
+    "name": "INIA",
+    "url": "https://www.inia.uy/"
+  },
+  {
+    "name": "Universidad de la República (IMFIA)",
+    "url": "https://www.fing.edu.uy/imfia/"
+  },
+  {
+    "name": "University of Sydney",
+    "url": "https://www.sydney.edu.au/"
+  },
+  {
+    "name": "Ministerio de Ambiente",
+    "url": "https://www.gub.uy/ministerio-ambiente/"
+  },
+  {
+    "name": "MGAP",
+    "url": "https://www.gub.uy/ministerio-ganaderia-agricultura-pesca/"
+  },
+  {
+    "name": "Universidad de la República (IECON)",
+    "url": "https://fcea.udelar.edu.uy/instituto-economia.html"
+  },
+  {
+    "name": "Universidad ORT",
+    "url": "https://www.ort.edu.uy/"
+  }
+]

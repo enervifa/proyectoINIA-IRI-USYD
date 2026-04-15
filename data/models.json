@@ -1,29 +1,34 @@
 [
   {
-    "id": 1,
-    "name": "SWAT - Tacuarembó",
+    "id": 9,
+    "name": "Borracho",
     "theme": "Water quantity",
     "type": "Catchment",
-    "institution": "University of Sydney",
+    "institution": "INIA / GMIC",
     "scale": "Catchment",
     "inputs": [
       "Climate",
-      "Land use",
-      "Soils"
+      "Land use"
     ],
     "status": "Active",
-    "description": "Process-based hydrological modelling for flow, ET, and land use scenarios.",
-    "website": "https://swat.tamu.edu/",
-    "latitude": -32.52,
-    "longitude": -55.77,
-    "location": "Tacuarembó, Uruguay",
+    "description": "Catchment boundary added from the Borracho shapefile.",
+    "website": "",
+    "latitude": -31.36161,
+    "longitude": -55.58753,
+    "location": "Uruguay",
     "keywords": [
-      "hydrology",
-      "land use",
-      "streamflow"
+      "catchment",
+      "hydrology"
     ],
     "gmic_member": true,
-    "map_link": ""
+    "map_link": "data/catchments/borracho.geojson",
+    "table_order": 1,
+    "table_name": "Borracho",
+    "table_themes": "Cantidad, cambios de uso de suelo, variabilidad climatica",
+    "table_scale": "Catchment",
+    "swat_model": "SWAT 2012",
+    "active_to_date": "Activo",
+    "show_in_catalogue": true
   },
   {
     "id": 2,
@@ -48,7 +53,14 @@
       "monitoring"
     ],
     "gmic_member": true,
-    "map_link": "data/catchments/san-salvador.geojson"
+    "map_link": "data/catchments/san-salvador.geojson",
+    "table_order": 2,
+    "table_name": "San Salvador",
+    "table_themes": "Cantidad, Calidad",
+    "table_scale": "Catchment",
+    "swat_model": "SWAT 2012",
+    "active_to_date": "Activo",
+    "show_in_catalogue": true
   },
   {
     "id": 3,
@@ -73,7 +85,14 @@
       "water quality"
     ],
     "gmic_member": true,
-    "map_link": ""
+    "map_link": "data/catchments/microcuencas.geojson",
+    "table_order": 3,
+    "table_name": "Microcuencas",
+    "table_themes": "Calidad",
+    "table_scale": "Plot / Small catchment",
+    "swat_model": "SWAT 2012",
+    "active_to_date": "Activo",
+    "show_in_catalogue": true
   },
   {
     "id": 4,
@@ -99,7 +118,14 @@
       "basin"
     ],
     "gmic_member": true,
-    "map_link": ""
+    "map_link": "data/catchments/santa-lucia-dinacea.geojson",
+    "show_in_catalogue": true,
+    "table_order": 4,
+    "table_name": "Santa Lucia (Cuenca 60)",
+    "table_themes": "Cantidad, Calidad, zonas buffer",
+    "table_scale": "Catchment",
+    "swat_model": "SWAT 2012",
+    "active_to_date": ""
   },
   {
     "id": 5,
@@ -124,7 +150,14 @@
       "land use"
     ],
     "gmic_member": true,
-    "map_link": ""
+    "map_link": "data/catchments/queguay-imfia.geojson",
+    "table_order": 5,
+    "table_name": "Queguay",
+    "table_themes": "Cantidad, cambios de uso de suelo, variabilidad climatica",
+    "table_scale": "Catchment",
+    "swat_model": "SWAT 2012",
+    "active_to_date": "",
+    "show_in_catalogue": true
   },
   {
     "id": 6,
@@ -149,34 +182,17 @@
       "hydrology"
     ],
     "gmic_member": true,
-    "map_link": ""
+    "map_link": "data/catchments/cebollati.geojson",
+    "show_in_catalogue": true,
+    "table_order": 6,
+    "table_name": "Cebollati",
+    "table_themes": "Cantidad, calidad, cambios de uso de suelo",
+    "table_scale": "Catchment",
+    "swat_model": "SWAT 2012",
+    "active_to_date": "Activo"
   },
   {
     "id": 7,
-    "name": "Cuareim",
-    "theme": "Water quantity",
-    "type": "Catchment",
-    "institution": "INIA / Regional projects",
-    "scale": "Catchment",
-    "inputs": [
-      "Climate"
-    ],
-    "status": "Active",
-    "description": "Large-scale basin analysis under climate variability.",
-    "website": "",
-    "latitude": -30.9,
-    "longitude": -57.0,
-    "location": "Artigas, Uruguay",
-    "keywords": [
-      "climate",
-      "basin",
-      "flow"
-    ],
-    "gmic_member": true,
-    "map_link": ""
-  },
-  {
-    "id": 8,
     "name": "Arapey Grande",
     "theme": "Water quantity",
     "type": "Catchment",
@@ -197,10 +213,48 @@
       "hydrology"
     ],
     "gmic_member": true,
-    "map_link": ""
+    "map_link": "data/catchments/arapey-grande.geojson",
+    "table_order": 7,
+    "table_name": "Arapey Grande",
+    "table_themes": "Cantidad, cambios de uso de suelo, variabilidad climatica",
+    "table_scale": "Catchment",
+    "swat_model": "SWAT plus",
+    "active_to_date": "",
+    "show_in_catalogue": true
   },
   {
-    "id": 9,
+    "id": 8,
+    "name": "Tala",
+    "theme": "Water quantity",
+    "type": "Catchment",
+    "institution": "INIA / GMIC",
+    "scale": "Catchment",
+    "inputs": [
+      "Climate",
+      "Land use"
+    ],
+    "status": "Active",
+    "description": "Catchment boundary added from the Tala shapefile.",
+    "website": "",
+    "latitude": -31.21389,
+    "longitude": -57.37128,
+    "location": "Uruguay",
+    "keywords": [
+      "catchment",
+      "hydrology"
+    ],
+    "gmic_member": true,
+    "map_link": "data/catchments/tala.geojson",
+    "table_order": 8,
+    "table_name": "Tala",
+    "table_themes": "Cantidad, calidad, riego, modelo economico",
+    "table_scale": "Catchment",
+    "swat_model": "SWATplus",
+    "active_to_date": "",
+    "show_in_catalogue": true
+  },
+  {
+    "id": 10,
     "name": "Laguna de Rocha",
     "theme": "Water quality",
     "type": "Lagoon",
@@ -222,10 +276,17 @@
       "water quality"
     ],
     "gmic_member": false,
-    "map_link": ""
+    "map_link": "data/catchments/laguna-de-rocha.geojson",
+    "table_order": 9,
+    "table_name": "Laguna de Rocha",
+    "table_themes": "Calidad",
+    "table_scale": "Catchment",
+    "swat_model": "SWAT 2012",
+    "active_to_date": "",
+    "show_in_catalogue": true
   },
   {
-    "id": 10,
+    "id": 11,
     "name": "Laguna del Cisne",
     "theme": "Water quality",
     "type": "Lagoon",
@@ -246,10 +307,17 @@
       "eutrophication"
     ],
     "gmic_member": true,
-    "map_link": ""
+    "map_link": "data/catchments/laguna-del-cisne.geojson",
+    "table_order": 10,
+    "table_name": "Laguna del Cisne",
+    "table_themes": "Calidad",
+    "table_scale": "Catchment",
+    "swat_model": "SWAT 2012",
+    "active_to_date": "",
+    "show_in_catalogue": true
   },
   {
-    "id": 11,
+    "id": 12,
     "name": "Río Negro",
     "theme": "Water quantity",
     "type": "Basin",
@@ -270,6 +338,138 @@
       "flow"
     ],
     "gmic_member": true,
-    "map_link": ""
+    "map_link": "data/catchments/rio-negro.geojson",
+    "show_in_catalogue": true,
+    "table_order": 11,
+    "table_name": "Rio Negro",
+    "table_themes": "Cantidad",
+    "table_scale": "Basin",
+    "swat_model": "SWAT 2012",
+    "active_to_date": "Activo"
+  },
+  {
+    "id": 13,
+    "name": "San Antonio",
+    "theme": "Water quantity",
+    "type": "Catchment",
+    "institution": "INIA / GMIC",
+    "scale": "Catchment",
+    "inputs": [
+      "Climate",
+      "Land use"
+    ],
+    "status": "Active",
+    "description": "Catchment boundary for the Rio Uruguay section between Arroyo San Antonio Grande and Rio Dayman.",
+    "website": "",
+    "latitude": -31.40631,
+    "longitude": -57.95716,
+    "location": "Salto, Uruguay",
+    "keywords": [
+      "catchment",
+      "Rio Uruguay",
+      "hydrology"
+    ],
+    "gmic_member": true,
+    "map_link": "data/catchments/san-antonio.geojson",
+    "table_order": 12,
+    "table_name": "San Antonio",
+    "table_themes": "Cantidad, calidad, riego, agua subterranea",
+    "table_scale": "Catchment",
+    "swat_model": "SWATplus",
+    "active_to_date": "",
+    "show_in_catalogue": true
+  },
+  {
+    "id": 14,
+    "name": "Laguna del Sauce",
+    "theme": "Water quality",
+    "type": "Lagoon",
+    "institution": "INIA / GMIC",
+    "scale": "Lagoon catchment",
+    "inputs": [
+      "Climate",
+      "Nutrients",
+      "Land use"
+    ],
+    "status": "Active",
+    "description": "Laguna del Sauce catchment boundary added from the available GeoJSON file.",
+    "website": "",
+    "latitude": -34.69993,
+    "longitude": -55.17706,
+    "location": "Maldonado, Uruguay",
+    "keywords": [
+      "lagoon",
+      "catchment",
+      "water quality"
+    ],
+    "gmic_member": true,
+    "map_link": "data/catchments/laguna-del-sauce.geojson",
+    "table_order": 13,
+    "table_name": "Laguna del Sauce",
+    "table_themes": "Calidad",
+    "table_scale": "Catchment",
+    "swat_model": "SWAT 2012",
+    "active_to_date": "",
+    "show_in_catalogue": true
+  },
+  {
+    "id": 15,
+    "name": "Santa Luc?a",
+    "theme": "Water quality",
+    "type": "Catchment",
+    "institution": "DINACEA / INIA",
+    "scale": "Catchment",
+    "inputs": [
+      "Climate",
+      "Land use",
+      "Nutrients"
+    ],
+    "status": "Active",
+    "description": "Santa Lucia catchment-scale modelling and water quality studies.",
+    "website": "",
+    "latitude": -34.19398,
+    "longitude": -55.91396,
+    "location": "Santa Lucía, Uruguay",
+    "keywords": [
+      "nutrients",
+      "water quality",
+      "basin"
+    ],
+    "gmic_member": true,
+    "map_link": "data/catchments/santa-lucia-dinacea.geojson",
+    "show_in_catalogue": true,
+    "table_order": 14,
+    "table_name": "Santa Lucia",
+    "table_themes": "Cantidad, Calidad, zonas buffer",
+    "table_scale": "Catchment",
+    "swat_model": "SWAT 2012",
+    "active_to_date": "Activo"
+  },
+  {
+    "id": 1,
+    "name": "SWAT - Tacuarembó",
+    "theme": "Water quantity",
+    "type": "Catchment",
+    "institution": "University of Sydney",
+    "scale": "Catchment",
+    "inputs": [
+      "Climate",
+      "Land use",
+      "Soils"
+    ],
+    "status": "Active",
+    "description": "Process-based hydrological modelling for flow, ET, and land use scenarios.",
+    "website": "https://swat.tamu.edu/",
+    "latitude": -32.52,
+    "longitude": -55.77,
+    "location": "Tacuarembó, Uruguay",
+    "keywords": [
+      "hydrology",
+      "land use",
+      "streamflow"
+    ],
+    "gmic_member": true,
+    "map_link": "data/catchments/microcuencas.geojson",
+    "show_in_catalogue": false
   }
 ]

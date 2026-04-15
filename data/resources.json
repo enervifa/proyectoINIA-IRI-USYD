@@ -1,0 +1,266 @@
+[
+  {
+    "model_id": 1,
+    "catchment": "SWAT - Tacuarembó",
+    "items": []
+  },
+  {
+    "model_id": 2,
+    "catchment": "San Salvador",
+    "items": [
+      {
+        "type": "Project",
+        "title": "Proyecto Innovagro - Carriquiry, Navas, Hastings",
+        "url": "https://www.anii.org.uy/proyectos/FSA_1_2024_1_180493/modelacion-integrada-ambienteeconomia-para-el-manejo-y-gestion-sostenible-del-agua-y-del-riego-en-sistemas-de-produccion-con-rotaciones-cultivopasturaarroz-en-el-norte-del-pais-frente-a-un-clima-que-cambia/",
+        "year": 2024
+      },
+      {
+        "type": "Thesis",
+        "title": "Tesis de Maestría - Florencia Hastings",
+        "url": "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/42876",
+        "year": 2024
+      },
+      {
+        "type": "Report",
+        "title": "Paper - Noelia Rivas",
+        "url": "https://www.inia.uy/sites/default/files/publications/2024-10/Revista-INIA-74-set-2023-14.pdf",
+        "year": 2023
+      },
+      {
+        "type": "Conference / Journal",
+        "title": "Paper - Augusto Souto",
+        "url": "https://ageconsearch.umn.edu/record/314037"
+      }
+    ]
+  },
+  {
+    "model_id": 3,
+    "catchment": "Microcuencas",
+    "items": [
+      {
+        "type": "Journal Article",
+        "title": "Multi-variable calibration of SWAT in a small experimental catchment area for afforestation scenario analyses",
+        "url": "https://doi.org/10.1080/02626667.2025.2552349",
+        "year": 2025
+      },
+      {
+        "type": "Journal Article",
+        "title": "Assessing effects of afforestation on streamflow in Uruguay",
+        "url": "https://doi.org/10.1002/hyp.15272"
+      },
+      {
+        "type": "Project",
+        "title": "Indicadores ambientales multiescala de la forestación en Uruguay",
+        "url": "https://www.anii.org.uy/proyectos/"
+      }
+    ]
+  },
+  {
+    "model_id": 4,
+    "catchment": "Santa Lucía Cuenca 60",
+    "items": [
+      {
+        "type": "Journal Article",
+        "title": "Identifying climate and human impact trends in streamflow: A case study in Uruguay",
+        "url": "https://doi.org/10.3390/w11071433",
+        "year": 2019
+      }
+    ]
+  },
+  {
+    "model_id": 5,
+    "catchment": "Queguay",
+    "items": [
+      {
+        "type": "Project",
+        "title": "Indicadores ambientales multiescala de la forestación en Uruguay (ANII)",
+        "url": "https://www.anii.org.uy/proyectos/"
+      },
+      {
+        "type": "Journal Article",
+        "title": "Assessing effects of afforestation on streamflow in Uruguay: From small to large basins",
+        "url": "https://doi.org/10.1002/hyp.15272"
+      }
+    ]
+  },
+  {
+    "model_id": 6,
+    "catchment": "Cebollatí",
+    "items": [
+      {
+        "type": "Project (upcoming)",
+        "title": "Proyecto FPTA (próximo)",
+        "url": "https://www.inia.uy/"
+      }
+    ]
+  },
+  {
+    "model_id": 7,
+    "catchment": "Arapey Grande",
+    "items": [
+      {
+        "type": "Project",
+        "title": "Indicadores ambientales multiescala de la forestación en Uruguay (ANII)",
+        "url": "https://www.anii.org.uy/proyectos/"
+      },
+      {
+        "type": "Journal Article",
+        "title": "Assessing effects of afforestation on streamflow in Uruguay: From small to large basins",
+        "url": "https://doi.org/10.1002/hyp.15272"
+      },
+      {
+        "type": "Project",
+        "title": "Proyecto Innovagro",
+        "url": "https://www.anii.org.uy/proyectos/FSA_1_2024_1_180493/modelacion-integrada-ambienteeconomia-para-el-manejo-y-gestion-sostenible-del-agua-y-del-riego-en-sistemas-de-produccion-con-rotaciones-cultivopasturaarroz-en-el-norte-del-pais-frente-a-un-clima-que-cambia/",
+        "year": 2024
+      },
+      {
+        "type": "Conference",
+        "title": "Publicación Rafael Navas (EGU)",
+        "url": "https://egu.eu/"
+      }
+    ]
+  },
+  {
+    "model_id": 8,
+    "catchment": "Tala",
+    "items": [
+      {
+        "type": "Journal Articles (current research)",
+        "title": "Publicaciones actuales - Andrés Saracho",
+        "url": "https://scholar.google.com/citations?user=oVUqjWgAAAAJ"
+      }
+    ]
+  },
+  {
+    "model_id": 9,
+    "catchment": "Borracho (Tacuarembó)",
+    "items": [
+      {
+        "type": "Project",
+        "title": "Proyecto FPTA 358",
+        "url": "https://www.inia.uy/",
+        "year": 2021
+      },
+      {
+        "type": "Project",
+        "title": "Indicadores ambientales multiescala",
+        "url": "https://www.anii.org.uy/proyectos/"
+      },
+      {
+        "type": "Journal Article",
+        "title": "Assessing effects of afforestation on streamflow",
+        "url": "https://doi.org/10.1002/hyp.15272"
+      }
+    ]
+  },
+  {
+    "model_id": 10,
+    "catchment": "Laguna de Rocha",
+    "items": [
+      {
+        "type": "Thesis",
+        "title": "Tesis - Lescano",
+        "url": "https://www.colibri.udelar.edu.uy/"
+      }
+    ]
+  },
+  {
+    "model_id": 11,
+    "catchment": "Laguna del Cisne",
+    "items": [
+      {
+        "type": "Report",
+        "title": "Informe MA - Mercedes Gelós",
+        "url": "https://www.gub.uy/ministerio-ambiente/"
+      }
+    ]
+  },
+  {
+    "model_id": 12,
+    "catchment": "Río Negro",
+    "items": [
+      {
+        "type": "Conference / Journal",
+        "title": "Publicación AIDIS Río Negro",
+        "url": "https://aidisnet.org/"
+      },
+      {
+        "type": "Report",
+        "title": "Informe DINACEA",
+        "url": "https://www.gub.uy/ministerio-ambiente/"
+      }
+    ]
+  },
+  {
+    "model_id": 13,
+    "catchment": "San Antonio",
+    "items": [
+      {
+        "type": "Journal Article",
+        "title": "Publicación GWFlow - Gelós / Navas",
+        "url": "https://scholar.google.com/"
+      }
+    ]
+  },
+  {
+    "model_id": 14,
+    "catchment": "Laguna del Sauce",
+    "items": [
+      {
+        "type": "Journal Article",
+        "title": "Analysing the Impact of Climate Change on Hydrological Ecosystem Services in Laguna del Sauce (Uruguay)",
+        "authors": "Azanrez et al.",
+        "url": "https://doi.org/10.3390/rs13102014",
+        "year": 2021
+      },
+      {
+        "type": "Conference",
+        "title": "SWAT modelling of Laguna del Sauce",
+        "authors": "Azanrez et al.",
+        "url": "https://swat.tamu.edu/media/p20nd1dd/2_swat_sauce.pdf"
+      }
+    ]
+  },
+  {
+    "model_id": 15,
+    "catchment": "Santa Lucía",
+    "items": [
+      {
+        "type": "Report",
+        "title": "Informe DINACEA",
+        "url": "https://www.gub.uy/ministerio-ambiente/"
+      },
+      {
+        "type": "Journal Article",
+        "title": "Modeling Ecosystem Services and Externalities for Ecosystem Accounting: The Case of Santa Lucia Sub-Basin in Uruguay",
+        "authors": "Hastings, Borges, Hein, Carriquiry",
+        "url": "https://doi.org/10.3390/su18031571"
+      },
+      {
+        "type": "Journal Article",
+        "title": "Influence of Land Use/Land Cover on Surface-Water Quality of Santa Lucía River, Uruguay",
+        "authors": "Gorgoglione et al.",
+        "url": "https://doi.org/10.3390/su12114692",
+        "year": 2020
+      },
+      {
+        "type": "Journal Article",
+        "title": "Assessing influential rainfall-runoff variables to simulate daily streamflow using random forest",
+        "authors": "Vilaseca et al.",
+        "url": "https://doi.org/10.1080/02626667.2023.2232356",
+        "year": 2023
+      },
+      {
+        "type": "Journal Articles (current research)",
+        "title": "Additional publications - Federico Vilaseca",
+        "url": "https://scholar.google.com/"
+      },
+      {
+        "type": "Journal Articles (current research)",
+        "title": "Additional publications - Angela Gorgoglione",
+        "url": "https://scholar.google.com/"
+      }
+    ]
+  }
+]
