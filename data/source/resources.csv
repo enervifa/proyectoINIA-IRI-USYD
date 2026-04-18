@@ -28,7 +28,7 @@
 12,Río Negro,Conference Paper,Implementación de un modelo de calidad de agua con la herramienta SWAT en la cuenca del Río Negro,https://aidis.org.uy/wp-content/uploads/2022/11/Hastings-Florencia.pdf,,2022
 13,San Antonio,Journal Article,SanAntonioApp: interactive visualization and repository of spatially distributed flow duration curves of the San Antonio Creek-Uruguay,https://doi.org/10.31285/agro.26.979 ,,2022
 13,San Antonio,Journal Article,Quantifying baseflow changes due to irrigation expansion using SWAT+ gwflow,https://scholar.google.com/citations?view_op=view_citation&hl=es&user=oVUqjWgAAAAJ&sortby=pubdate&citation_for_view=oVUqjWgAAAAJ:roLk4NBRz8UC,,
-14,Laguna del Sauce,Journal Article,"Simulación del proceso precipitación-escorrentía con paso diario : Comparación de los modelos GR4J, SWAT y Random Forest.",doi.org/10.3390/rs13102014,,2021
+14,Laguna del Sauce,Journal Article,Analysing the Impact of Climate Change on Hydrological Ecosystem Services in Laguna del Sauce (Uruguay) Using the SWAT Model and Remote Sensing Data,https://www.mdpi.com/2072-4292/13/10/2014,,2021
 15,Santa Lucía,Journal Article,"Simulation of the daily rainfall-runoff process: comparison among GR4J, SWAT, and Random Forest",https://doi.org/10.1080/23863781.2023.2238127,,2023
 15,Santa Lucía,Report,Informe MA ,https://www.gub.uy/ministerio-ganaderia-agricultura-pesca/comunicacion/noticias/avanza-proyecto-gestion-conservacion-agua-cuenca-santa-lucia,,2019
 15,Santa Lucía,Journal Article,Modeling Ecosystem Services and Externalities for Ecosystem Accounting: The Case of Santa Lucia Sub-Basin in Uruguay,https://doi.org/10.3390/su18031571,,2026
@@ -39,3 +39,4 @@
 15,Santa Lucía,Conference Paper,Apoyo a la gestión de los recursos hídricos en Uruguay: Grupo de modelación integrada de cuenca,https://aidis.org.uy/wp-content/uploads/2022/11/Nervi-Eliana.pdf,,2022
 15,Santa Lucía,Conference Paper, Modelación con SWAT en la cuenca del Santa Lucía : un ejemplo exitoso de trabajo Interinstitucional e Interdisciplinario para la gestión de los Recursos Hídricos en Uruguay.,https://aidis.org.uy/wp-content/uploads/2022/11/Nervi-Eliana-2.pdf,,2022
 15,Santa Lucía,Conference Paper,Evalaución de escenarios de uso de suelo en una subcuenca del Río Santa Lucía utilizando el modelo SWAT,https://www.fing.edu.uy/imfia/congresos/caae/assets/trabajos/58_Modelaci%C3%B3n_con_SWAT_en_la_cuenca_del_Santa_Luc%C3%ADa:.pdf,,
+15,Santa Lucía,Journal Article,"Simulación del proceso precipitación-escorrentía con paso diario : Comparación de los modelos GR4J, SWAT y Random Forest.",https://doi.org/10.3390/rs13102014,,2021

@@ -598,8 +598,9 @@
     .site-banner img {
       display: block;
       width: 100%;
-      max-height: 260px;
+      height: clamp(320px, 42vh, 560px);
       object-fit: cover;
+      object-position: center;
     }
 
     .models-grid {
@@ -1347,6 +1348,12 @@
       return String(d.map_link || "").includes("microcuencas.geojson");
     }
 
+    function isRioNegroLayer(d) {
+      const link = String(d.map_link || "").toLowerCase();
+      if (link.includes("rio-negro.geojson")) return true;
+      return normalizeKey(d.table_name || d.name || "") === "rio negro";
+    }
+
     function splitThemes(value) {
       return String(value || "")
         .split(/[,/]/)
@@ -1376,9 +1383,21 @@
         return compact ? "" : `<span class="empty-message">Sin metadatos por ahora.</span>`;
       }
 
+      const sorted = [...resources].sort((a, b) => {
+        const ya = Number(a?.year);
+        const yb = Number(b?.year);
+        const va = Number.isFinite(ya) && Number.isInteger(ya) && ya >= 1900;
+        const vb = Number.isFinite(yb) && Number.isInteger(yb) && yb >= 1900;
+        if (va && vb && ya !== yb) return yb - ya; // newest first
+        if (va !== vb) return va ? -1 : 1; // items with year first
+        const ta = String(a?.title || "");
+        const tb = String(b?.title || "");
+        return ta.localeCompare(tb);
+      });
+
       return `
         <ul class="resource-list">
-          ${resources.map(item => {
+          ${sorted.map(item => {
             const type = escapeHtml(item.type || "Link");
             const title = escapeHtml(item.title);
             const authors = item.authors ? `<span class="resource-authors">${escapeHtml(item.authors)}</span>` : "";
@@ -1967,9 +1986,13 @@
       geojsonLayerGroup.clearLayers();
 
       const bounds = L.latLngBounds([]);
-      const mapData = [...filtered].sort((a, b) =>
-        Number(isMicrocuencasLayer(a)) - Number(isMicrocuencasLayer(b))
-      );
+      const layerRank = (d) => {
+        // Large polygons first (below), microcuencas last (above).
+        if (isMicrocuencasLayer(d)) return 2;
+        if (isRioNegroLayer(d)) return 0;
+        return 1;
+      };
+      const mapData = [...filtered].sort((a, b) => layerRank(a) - layerRank(b));
 
       for (const d of mapData) {
         const count = resourceCount(d);
@@ -1993,6 +2016,10 @@
                 featureLayer.bindPopup(popupHtml(d, feature.properties));
               }
             }).addTo(geojsonLayerGroup);
+
+            if (isRioNegroLayer(d) && layer.bringToBack) {
+              layer.bringToBack();
+            }
 
             if (isMicrocuencasLayer(d) && layer.bringToFront) {
               layer.bringToFront();
