@@ -2,14 +2,9 @@
   {
     "id": 9,
     "name": "Borracho",
-    "theme": "Water quantity",
+    "themes": "Cantidad, cambios de uso de suelo, variabilidad climatica",
     "type": "Catchment",
-    "institution": "INIA / GMIC",
     "scale": "Catchment",
-    "inputs": [
-      "Climate",
-      "Land use"
-    ],
     "status": "Active",
     "description": "Catchment boundary added from the Borracho shapefile.",
     "website": "",
@@ -20,11 +15,9 @@
       "catchment",
       "hydrology"
     ],
-    "gmic_member": true,
     "map_link": "data/catchments/borracho.geojson",
     "table_order": 1,
     "table_name": "Borracho",
-    "table_themes": "Cantidad, cambios de uso de suelo, variabilidad climatica",
     "table_scale": "Catchment",
     "swat_model": "SWAT 2012",
     "active_to_date": "Activo",
@@ -33,14 +26,9 @@
   {
     "id": 2,
     "name": "San Salvador",
-    "theme": "Water quantity",
+    "themes": "Cantidad, Calidad",
     "type": "Catchment",
-    "institution": "INIA / GMIC",
     "scale": "Catchment",
-    "inputs": [
-      "Climate",
-      "Land use"
-    ],
     "status": "Active",
     "description": "Hydrological monitoring and modelling in agricultural catchment.",
     "website": "",
@@ -52,11 +40,9 @@
       "runoff",
       "monitoring"
     ],
-    "gmic_member": true,
     "map_link": "data/catchments/san-salvador.geojson",
     "table_order": 2,
     "table_name": "San Salvador",
-    "table_themes": "Cantidad, Calidad",
     "table_scale": "Catchment",
     "swat_model": "SWAT 2012",
     "active_to_date": "Activo",
@@ -65,14 +51,9 @@
   {
     "id": 3,
     "name": "Microcuencas",
-    "theme": "Water quality",
+    "themes": "Calidad",
     "type": "Experimental site",
-    "institution": "INIA / GMIC",
     "scale": "Plot / Small catchment",
-    "inputs": [
-      "Climate",
-      "Management"
-    ],
     "status": "Active",
     "description": "Experimental micro-catchments for high-resolution monitoring of water quantity and quality.",
     "website": "",
@@ -84,11 +65,9 @@
       "experimental",
       "water quality"
     ],
-    "gmic_member": true,
     "map_link": "data/catchments/microcuencas.geojson",
     "table_order": 3,
     "table_name": "Microcuencas",
-    "table_themes": "Calidad",
     "table_scale": "Plot / Small catchment",
     "swat_model": "SWAT 2012",
     "active_to_date": "Activo",
@@ -97,15 +76,9 @@
   {
     "id": 4,
     "name": "Santa Lucía (Cuenca 60)",
-    "theme": "Water quality",
+    "themes": "Cantidad, Calidad, zonas buffer",
     "type": "Catchment",
-    "institution": "DINACEA / INIA",
     "scale": "Catchment",
-    "inputs": [
-      "Climate",
-      "Land use",
-      "Nutrients"
-    ],
     "status": "Active",
     "description": "Catchment-scale modelling focused on nutrient dynamics and drinking water sources.",
     "website": "",
@@ -117,27 +90,20 @@
       "water quality",
       "basin"
     ],
-    "gmic_member": true,
     "map_link": "data/catchments/santa-lucia-dinacea.geojson",
-    "show_in_catalogue": true,
     "table_order": 4,
     "table_name": "Santa Lucia (Cuenca 60)",
-    "table_themes": "Cantidad, Calidad, zonas buffer",
     "table_scale": "Catchment",
     "swat_model": "SWAT 2012",
-    "active_to_date": ""
+    "active_to_date": "",
+    "show_in_catalogue": true
   },
   {
     "id": 5,
     "name": "Queguay",
-    "theme": "Water quantity",
+    "themes": "Cantidad, cambios de uso de suelo, variabilidad climatica",
     "type": "Catchment",
-    "institution": "INIA / UdelaR",
     "scale": "Catchment",
-    "inputs": [
-      "Climate",
-      "Land use"
-    ],
     "status": "Active",
     "description": "Hydrological assessment of land use change impacts in river basin.",
     "website": "",
@@ -149,11 +115,9 @@
       "flow",
       "land use"
     ],
-    "gmic_member": true,
     "map_link": "data/catchments/queguay-imfia.geojson",
     "table_order": 5,
     "table_name": "Queguay",
-    "table_themes": "Cantidad, cambios de uso de suelo, variabilidad climatica",
     "table_scale": "Catchment",
     "swat_model": "SWAT 2012",
     "active_to_date": "",
@@ -162,14 +126,9 @@
   {
     "id": 6,
     "name": "Cebollatí",
-    "theme": "Water quantity",
+    "themes": "Cantidad, calidad, cambios de uso de suelo",
     "type": "Catchment",
-    "institution": "INIA",
     "scale": "Catchment",
-    "inputs": [
-      "Climate",
-      "Land use"
-    ],
     "status": "Active",
     "description": "Hydrological modelling in rice-dominated basin systems.",
     "website": "",
@@ -181,27 +140,20 @@
       "irrigation",
       "hydrology"
     ],
-    "gmic_member": true,
     "map_link": "data/catchments/cebollati.geojson",
-    "show_in_catalogue": true,
     "table_order": 6,
     "table_name": "Cebollati",
-    "table_themes": "Cantidad, calidad, cambios de uso de suelo",
     "table_scale": "Catchment",
     "swat_model": "SWAT 2012",
-    "active_to_date": "Activo"
+    "active_to_date": "Activo",
+    "show_in_catalogue": true
   },
   {
     "id": 7,
     "name": "Arapey Grande",
-    "theme": "Water quantity",
+    "themes": "Cantidad, cambios de uso de suelo, variabilidad climatica",
     "type": "Catchment",
-    "institution": "INIA",
     "scale": "Catchment",
-    "inputs": [
-      "Climate",
-      "Land use"
-    ],
     "status": "Active",
     "description": "Hydrological studies in northern Uruguay river systems.",
     "website": "",
@@ -212,11 +164,9 @@
       "river",
       "hydrology"
     ],
-    "gmic_member": true,
     "map_link": "data/catchments/arapey-grande.geojson",
     "table_order": 7,
     "table_name": "Arapey Grande",
-    "table_themes": "Cantidad, cambios de uso de suelo, variabilidad climatica",
     "table_scale": "Catchment",
     "swat_model": "SWAT plus",
     "active_to_date": "",
@@ -225,14 +175,9 @@
   {
     "id": 8,
     "name": "Tala",
-    "theme": "Water quantity",
+    "themes": "Cantidad, calidad, riego, modelo economico",
     "type": "Catchment",
-    "institution": "INIA / GMIC",
     "scale": "Catchment",
-    "inputs": [
-      "Climate",
-      "Land use"
-    ],
     "status": "Active",
     "description": "Catchment boundary added from the Tala shapefile.",
     "website": "",
@@ -243,11 +188,9 @@
       "catchment",
       "hydrology"
     ],
-    "gmic_member": true,
     "map_link": "data/catchments/tala.geojson",
     "table_order": 8,
     "table_name": "Tala",
-    "table_themes": "Cantidad, calidad, riego, modelo economico",
     "table_scale": "Catchment",
     "swat_model": "SWATplus",
     "active_to_date": "",
@@ -256,14 +199,9 @@
   {
     "id": 10,
     "name": "Laguna de Rocha",
-    "theme": "Water quality",
+    "themes": "Calidad",
     "type": "Lagoon",
-    "institution": "Various",
     "scale": "Lagoon",
-    "inputs": [
-      "Climate",
-      "Nutrients"
-    ],
     "status": "Active",
     "description": "Coastal lagoon system with strong ecological and water quality monitoring.",
     "website": "",
@@ -275,11 +213,9 @@
       "ecosystem",
       "water quality"
     ],
-    "gmic_member": false,
     "map_link": "data/catchments/laguna-de-rocha.geojson",
     "table_order": 9,
     "table_name": "Laguna de Rocha",
-    "table_themes": "Calidad",
     "table_scale": "Catchment",
     "swat_model": "SWAT 2012",
     "active_to_date": "",
@@ -288,14 +224,9 @@
   {
     "id": 11,
     "name": "Laguna del Cisne",
-    "theme": "Water quality",
+    "themes": "Calidad",
     "type": "Lagoon",
-    "institution": "OSE / DINACEA",
     "scale": "Lagoon",
-    "inputs": [
-      "Nutrients",
-      "Land use"
-    ],
     "status": "Active",
     "description": "Drinking water source with nutrient and algal bloom monitoring.",
     "website": "",
@@ -306,11 +237,9 @@
       "drinking water",
       "eutrophication"
     ],
-    "gmic_member": true,
     "map_link": "data/catchments/laguna-del-cisne.geojson",
     "table_order": 10,
     "table_name": "Laguna del Cisne",
-    "table_themes": "Calidad",
     "table_scale": "Catchment",
     "swat_model": "SWAT 2012",
     "active_to_date": "",
@@ -319,13 +248,9 @@
   {
     "id": 12,
     "name": "Río Negro",
-    "theme": "Water quantity",
+    "themes": "Cantidad",
     "type": "Basin",
-    "institution": "INIA / UTE",
     "scale": "Basin",
-    "inputs": [
-      "Climate"
-    ],
     "status": "Active",
     "description": "Large basin modelling including hydropower and flow regulation.",
     "website": "",
@@ -337,27 +262,20 @@
       "basin",
       "flow"
     ],
-    "gmic_member": true,
     "map_link": "data/catchments/rio-negro.geojson",
-    "show_in_catalogue": true,
     "table_order": 11,
     "table_name": "Rio Negro",
-    "table_themes": "Cantidad",
     "table_scale": "Basin",
     "swat_model": "SWAT 2012",
-    "active_to_date": "Activo"
+    "active_to_date": "Activo",
+    "show_in_catalogue": true
   },
   {
     "id": 13,
     "name": "San Antonio",
-    "theme": "Water quantity",
+    "themes": "Cantidad, calidad, riego, agua subterranea",
     "type": "Catchment",
-    "institution": "INIA / GMIC",
     "scale": "Catchment",
-    "inputs": [
-      "Climate",
-      "Land use"
-    ],
     "status": "Active",
     "description": "Catchment boundary for the Rio Uruguay section between Arroyo San Antonio Grande and Rio Dayman.",
     "website": "",
@@ -369,11 +287,9 @@
       "Rio Uruguay",
       "hydrology"
     ],
-    "gmic_member": true,
     "map_link": "data/catchments/san-antonio.geojson",
     "table_order": 12,
     "table_name": "San Antonio",
-    "table_themes": "Cantidad, calidad, riego, agua subterranea",
     "table_scale": "Catchment",
     "swat_model": "SWATplus",
     "active_to_date": "",
@@ -382,15 +298,9 @@
   {
     "id": 14,
     "name": "Laguna del Sauce",
-    "theme": "Water quality",
+    "themes": "Calidad",
     "type": "Lagoon",
-    "institution": "INIA / GMIC",
     "scale": "Lagoon catchment",
-    "inputs": [
-      "Climate",
-      "Nutrients",
-      "Land use"
-    ],
     "status": "Active",
     "description": "Laguna del Sauce catchment boundary added from the available GeoJSON file.",
     "website": "",
@@ -402,11 +312,9 @@
       "catchment",
       "water quality"
     ],
-    "gmic_member": true,
     "map_link": "data/catchments/laguna-del-sauce.geojson",
     "table_order": 13,
     "table_name": "Laguna del Sauce",
-    "table_themes": "Calidad",
     "table_scale": "Catchment",
     "swat_model": "SWAT 2012",
     "active_to_date": "",
@@ -415,15 +323,9 @@
   {
     "id": 15,
     "name": "Santa Luc?a",
-    "theme": "Water quality",
+    "themes": "Cantidad, Calidad, zonas buffer",
     "type": "Catchment",
-    "institution": "DINACEA / INIA",
     "scale": "Catchment",
-    "inputs": [
-      "Climate",
-      "Land use",
-      "Nutrients"
-    ],
     "status": "Active",
     "description": "Santa Lucia catchment-scale modelling and water quality studies.",
     "website": "",
@@ -435,28 +337,44 @@
       "water quality",
       "basin"
     ],
-    "gmic_member": true,
     "map_link": "data/catchments/santa-lucia-dinacea.geojson",
-    "show_in_catalogue": true,
     "table_order": 14,
     "table_name": "Santa Lucia",
-    "table_themes": "Cantidad, Calidad, zonas buffer",
     "table_scale": "Catchment",
     "swat_model": "SWAT 2012",
-    "active_to_date": "Activo"
+    "active_to_date": "Activo",
+    "show_in_catalogue": true
+  },
+  {
+    "id": 16,
+    "name": "Olimar",
+    "themes": "Cantidad",
+    "type": "Catchment",
+    "scale": "Catchment",
+    "status": "Active",
+    "description": "Catchment boundary added from Olimar GeoJSON.",
+    "website": "",
+    "latitude": -33.0,
+    "longitude": -54.8,
+    "location": "Uruguay",
+    "keywords": [
+      "catchment",
+      "hydrology"
+    ],
+    "map_link": "data/catchments/olimar.geojson",
+    "table_order": 15,
+    "table_name": "Olimar",
+    "table_scale": "Catchment",
+    "swat_model": "SWAT 2012",
+    "active_to_date": "",
+    "show_in_catalogue": true
   },
   {
     "id": 1,
     "name": "SWAT - Tacuarembó",
-    "theme": "Water quantity",
+    "themes": "Water quantity",
     "type": "Catchment",
-    "institution": "University of Sydney",
     "scale": "Catchment",
-    "inputs": [
-      "Climate",
-      "Land use",
-      "Soils"
-    ],
     "status": "Active",
     "description": "Process-based hydrological modelling for flow, ET, and land use scenarios.",
     "website": "https://swat.tamu.edu/",
@@ -468,8 +386,12 @@
       "land use",
       "streamflow"
     ],
-    "gmic_member": true,
     "map_link": "data/catchments/microcuencas.geojson",
+    "table_order": 16,
+    "table_name": "SWAT - Tacuarembó",
+    "table_scale": "Catchment",
+    "swat_model": "",
+    "active_to_date": "",
     "show_in_catalogue": false
   }
 ]

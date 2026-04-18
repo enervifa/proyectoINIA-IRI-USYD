@@ -1,0 +1,15 @@
+﻿model_id,catchment,keywords
+2,San Salvador,riego; agricultura; mapa de uso de suelo; calidad de agua
+3,Microcuencas,forestacion; intercepcion; evapotranspiracion; cuencas pareadas
+4,Santa Lucia (Cuenca 60),calidad de agua; cantidad de agua; buenas practicas de manejo
+5,Queguay,cantidad de agua; forestacion
+6,Cebollati,calidad de agua; cantidad de agua;arroz
+7,Arapey Grande,cantidad de agua; forestacion
+8,Tala,horticultura; riego;;caudales ambientales
+9,Borracho,cantidad de agua; forestacion; variabilidad climatica; caudal ambiental
+10,Laguna de Rocha,calidad de agua
+11,Laguna del Cisne,calidad de agua
+12,Rio Negro,calidad de agua; buenas practicas de manejo
+13,San Antonio,calidad de agua; agua subterranea; riego
+15,Santa Lucia,calidad de agua; cantidad de agua; modelo economico; servicios ecosistemicos
+16,Olimar,cantidad de agua;caudales ambientales

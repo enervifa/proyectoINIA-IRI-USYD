@@ -1,0 +1,41 @@
+﻿model_id,catchment,type,title,url,,year
+2,San Salvador,Conference Paper,Assessing the Impact of Agricultural Intensification on Water Pollution: An Integrated Model Assessment of the San Salvador Basin in Uruguay,https://ageconsearch.umn.edu/record/314037,,2021
+2,San Salvador,Report,Proyecto Innovagro ,https://www.inia.uy/sites/default/files/publications/2024-10/Revista-INIA-74-set-2023-14.pdf,,2023
+2,San Salvador,Project,Proyecto Innovagro ,https://www.anii.org.uy/proyectos/FSA_1_2024_1_180493/modelacion-integrada-ambienteeconomia-para-el-manejo-y-gestion-sostenible-del-agua-y-del-riego-en-sistemas-de-produccion-con-rotaciones-cultivopasturaarroz-en-el-norte-del-pais-frente-a-un-clima-que-cambia/,,2024
+2,San Salvador,Thesis,Tesis de Maestría - Florencia Hastings,https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/42876,,2024
+3,Microcuencas,Journal Article,Assessing effects of afforestation on streamflow in Uruguay: From small to large basins,https://doi.org/10.1002/hyp.15272,,2024
+3,Microcuencas,Proyecto,ANII-FSI I 2016 1-128679 Indicadores ambientales multiescala de la forestación en Uruguay,https://www.anii.org.uy/proyectos/,,2016
+3,Microcuencas,Journal Article,Multi-variable calibration of SWAT in a small experimental catchment area for afforestation scenario analyses,https://doi.org/10.1080/02626667.2025.2552349,,2025
+4,Santa Lucía Cuenca 60,Journal Article,Building trust in SWAT model scenarios through a multi-institutional approach in Uruguay,https://doi.org/10.18174/sesmo.2020a17892,,2020
+4,Santa Lucía Cuenca 60,OSF,SWAT Subcuenca Santa Lucia,https://osf.io/uqb5j/overview,,2020
+4,Santa Lucía Cuenca 60,Journal Article,Identifying climate and human impact trends in streamflow: A case study in Uruguay,https://doi.org/10.3390/w11071433,,2019
+5,Queguay,Journal Article,Assessing effects of afforestation on streamflow in Uruguay: From small to large basins,https://doi.org/10.1002/hyp.15272,,2024
+5,Queguay,Proyecto,ANII-FSI I 2016 1-128679 Indicadores ambientales multiescala de la forestación en Uruguay,https://www.anii.org.uy/proyectos/,,2016
+6,Cebollatí,Project ,Proyecto FPTA (upcoming),SURE-HIDRO,,2026
+7,Arapey Grande,Journal Article,Assessing effects of afforestation on streamflow in Uruguay: From small to large basins,https://doi.org/10.1002/hyp.15272,,2024
+7,Arapey Grande,Proyecto,ANII-FSI I 2016 1-128679 Indicadores ambientales multiescala de la forestación en Uruguay,https://www.anii.org.uy/proyectos/,,2016
+7,Arapey Grande,Conference Paper,Basin-Scale Design of Irrigation Districts and Water Planning Strategies for Sustainable Agricultural Intensification,https://doi.org/10.5194/egusphere-egu26-22150,,2026
+7,Arapey Grande,Conference Paper,Mitigating the impact of agricultural land use on total phosphorus concentration through upstream controlled reservoir releases.,https://swat.tamu.edu/conferences/2023-aarhus/agenda/,,2024
+7,Arapey Grande,Project,Proyecto Innovagro,https://www.anii.org.uy/proyectos/FSA_1_2024_1_180493/modelacion-integrada-ambienteeconomia-para-el-manejo-y-gestion-sostenible-del-agua-y-del-riego-en-sistemas-de-produccion-con-rotaciones-cultivopasturaarroz-en-el-norte-del-pais-frente-a-un-clima-que-cambia/,,2024
+8,Tala,,Evaluación de los caudales ambientales en una cuenca agrícola,https://icolibri.com.br/2025/public/__anais/TC0130002.pdf,,
+8,Tala,Journal Article,Assessing impacts of irrigation on flows frequency downstream of an irrigated agricultural system by the SWAT model,https://piahs.copernicus.org/articles/385/423/2024/,,2024
+9,Borracho (Tacuarembó),Journal Article,Assessing effects of afforestation on streamflow in Uruguay: From small to large basins,https://doi.org/10.1002/hyp.15272,,2024
+9,Borracho (Tacuarembó),Proyecto,ANII-FSI I 2016 1-128679 Indicadores ambientales multiescala de la forestación en Uruguay,https://www.anii.org.uy/proyectos/,,2016
+9,Borracho (Tacuarembó),Project,Proyecto FPTA 358,10.31285/AGRO.27.1194,,2021
+10,Laguna de Rocha,Thesis,Tesis de Maestría -Carolina Lescano,https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/37622,,2023
+11,Laguna del Cisne,Report,Informe MA - Mercedes Gelós,https://www.gub.uy/ministerio-ambiente/sites/ministerio-ambiente/files/documentos/publicaciones/SWAT_FINAL_Informe%20sobre%20la%20modelacion%20de%20plaguicidas%20en%20la%20Subcuenca%2060%20del%20Arroyo%20Santa%20Luc%C3%ADa%20con%20SWAT.pdf,,2019
+12,Río Negro,Report,Informe MA ,https://www.gub.uy/ministerio-ambiente/sites/ministerio-ambiente/files/documentos/publicaciones/Resumen%20del%20PLAN%20DE%20CUENCA%20RIO%20NEGRO_compressed%20%281%29.pdf,,2023
+12,Río Negro,Conference Paper,Implementación de un modelo de calidad de agua con la herramienta SWAT en la cuenca del Río Negro,https://aidis.org.uy/wp-content/uploads/2022/11/Hastings-Florencia.pdf,,2022
+13,San Antonio,Journal Article,SanAntonioApp: interactive visualization and repository of spatially distributed flow duration curves of the San Antonio Creek-Uruguay,https://doi.org/10.31285/agro.26.979 ,,2022
+13,San Antonio,Journal Article,Quantifying baseflow changes due to irrigation expansion using SWAT+ gwflow,https://scholar.google.com/citations?view_op=view_citation&hl=es&user=oVUqjWgAAAAJ&sortby=pubdate&citation_for_view=oVUqjWgAAAAJ:roLk4NBRz8UC,,
+14,Laguna del Sauce,Journal Article,"Simulación del proceso precipitación-escorrentía con paso diario : Comparación de los modelos GR4J, SWAT y Random Forest.",doi.org/10.3390/rs13102014,,2021
+15,Santa Lucía,Journal Article,"Simulation of the daily rainfall-runoff process: comparison among GR4J, SWAT, and Random Forest",https://doi.org/10.1080/23863781.2023.2238127,,2023
+15,Santa Lucía,Report,Informe MA ,https://www.gub.uy/ministerio-ganaderia-agricultura-pesca/comunicacion/noticias/avanza-proyecto-gestion-conservacion-agua-cuenca-santa-lucia,,2019
+15,Santa Lucía,Journal Article,Modeling Ecosystem Services and Externalities for Ecosystem Accounting: The Case of Santa Lucia Sub-Basin in Uruguay,https://doi.org/10.3390/su18031571,,2026
+15,Santa Lucía,Journal Article,"Influence of Land Use/Land Cover on Surface-Water Quality of Santa Lucía River, Uruguay",https://www.mdpi.com/2071-1050/12/11/4692,,2020
+15,Santa Lucía,Journal Article,On the prediction of phosphorus fluxes in the Santa Lucía basin under different land use and management practices using SWAT model,https://psp7.org/abstracts-2/,,2022
+15,Santa Lucía,Thesis,Tesis de Mestría - Eliana Nervi,https://dro.deakin.edu.au/articles/thesis/Merging_blue_green_Infrastructure_and_biotechnology_the_case_of_glyphosate_in_Santa_Lucia_s_sub-basin/21115849/1/files/37461784.pdf,,2018
+15,Santa Lucía,Conference Paper,Aplicación del modelo SWAT en estudios de la presencia de glifosato en escorrentías rurales en una subcuenca del río Santa LucíaAplicación del modelo SWAT en estudios de la presencia de glifosato en escorrentías rurales en una subcuenca del río Santa Lucía,https://bit.ly/3Zl8QM0,,2018
+15,Santa Lucía,Conference Paper,Apoyo a la gestión de los recursos hídricos en Uruguay: Grupo de modelación integrada de cuenca,https://aidis.org.uy/wp-content/uploads/2022/11/Nervi-Eliana.pdf,,2022
+15,Santa Lucía,Conference Paper, Modelación con SWAT en la cuenca del Santa Lucía : un ejemplo exitoso de trabajo Interinstitucional e Interdisciplinario para la gestión de los Recursos Hídricos en Uruguay.,https://aidis.org.uy/wp-content/uploads/2022/11/Nervi-Eliana-2.pdf,,2022
+15,Santa Lucía,Conference Paper,Evalaución de escenarios de uso de suelo en una subcuenca del Río Santa Lucía utilizando el modelo SWAT,https://www.fing.edu.uy/imfia/congresos/caae/assets/trabajos/58_Modelaci%C3%B3n_con_SWAT_en_la_cuenca_del_Santa_Luc%C3%ADa:.pdf,,

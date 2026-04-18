@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GMIC Uruguay | Herramientas de modelación del agua</title>
   <meta name="description" content="Herramientas de GMIC Uruguay para la gestión de cantidad y calidad de agua." />
@@ -80,8 +81,8 @@
     }
 
     .site-logo {
-      width: 150px;
-      height: 150px;
+      width: clamp(170px, 14vw, 240px);
+      height: clamp(170px, 14vw, 240px);
       object-fit: contain;
       background: white;
       border-radius: 12px;
@@ -311,6 +312,13 @@
       font-size: 0.82rem;
       font-weight: 700;
       margin: 0 0.3rem 0.3rem 0;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.35rem;
     }
 
     .count-pill {
@@ -680,8 +688,8 @@
       #map { height: 400px; }
 
       .site-logo {
-        width: 112px;
-        height: 112px;
+        width: 132px;
+        height: 132px;
       }
 
       nav {
@@ -753,15 +761,18 @@
         <div class="about-text timeline-panel" id="timelinePanel">
           <h3>L&iacute;nea de tiempo del grupo de modelaci&oacute;n de cuencas (GMIC)</h3>
           <p>
-            <strong>2017</strong><br>
-            El antecedente principal del grupo se encuentra en el proyecto FPTA 341, <em>&ldquo;Contribuci&oacute;n del IRI a la gesti&oacute;n de riesgos asociados al clima en el sector agropecuario del Cono Sur&rdquo;</em>. En este marco se desarroll&oacute; una experiencia de modelado participativo (PM) con un enfoque innovador, donde los actores involucrados eran modeladores hidrol&oacute;gicos activos, mientras que el rol de los expertos se centr&oacute; en la facilitaci&oacute;n y el desarrollo de capacidades.
+            <strong>2015</strong><br>
+            El antecedente principal del grupo fue el proyecto FPTA 341, &ldquo;Contribuci&oacute;n del IRI a la gesti&oacute;n de riesgos asociados al clima en el sector agropecuario del Cono Sur&rdquo;, liderado por Walter Baethgen (Columbia University). En este marco se desarroll&oacute; una experiencia de modelado participativo (PM) con un enfoque innovador, donde los actores involucrados eran modeladores hidrol&oacute;gicos activos, mientras que el rol de los expertos se centr&oacute; en la facilitaci&oacute;n y el desarrollo de capacidades.
           </p>
           <p>
-            Esta etapa permiti&oacute; identificar desaf&iacute;os clave y avanzar en el trabajo sobre una cuenca piloto, promoviendo la modelaci&oacute;n conjunta entre actores de diversas instituciones. El proceso fue liderado por Willem Vervoort (Universidad de Sydney), junto a Flora Mer y Walter Baethgen del IRI, Columbia University.
+            Se llev&oacute; a cabo el taller &ldquo;Necesidades de Investigaci&oacute;n en Recursos H&iacute;dricos&rdquo; participaron las instituciones que intervienen en la gesti&oacute;n del agua.
+          </p>
+          <p>
+            Esta etapa permiti&oacute; identificar desaf&iacute;os clave y avanzar en el trabajo sobre una cuenca piloto, promoviendo la modelaci&oacute;n conjunta entre actores de diversas instituciones. El proceso fue liderado por Walter Baethgen, Flora Mer y Willem Vervoort (Universidad de Sydney).
           </p>
           <p>
             <strong>2021</strong><br>
-            El trabajo iniciado en este proyecto se continu&oacute; y fortaleci&oacute; en el proyecto INIA FPTA 358, <em>&ldquo;Fortalecimiento de la red de investigaci&oacute;n de INIA en el manejo sostenible del agua en agricultura y forestaci&oacute;n&rdquo;</em>. En esta etapa se consolid&oacute; el uso de modelos hidrol&oacute;gicos, el desarrollo de herramientas aplicadas y el trabajo interdisciplinario que hoy caracteriza al grupo GMIC.
+            El trabajo iniciado en este proyecto se continu&oacute; y fortaleci&oacute; en el proyecto INIA FPTA 358, &ldquo;Fortalecimiento de la red de investigaci&oacute;n de INIA en el manejo sostenible del agua en agricultura y forestaci&oacute;n&rdquo;.  En esta etapa se consolid&oacute; el uso de modelos hidrol&oacute;gicos, el desarrollo de herramientas aplicadas y el trabajo interdisciplinario que hoy caracteriza al grupo GMIC.
           </p>
           <p>
             <strong>Actualidad: contin&uacute;a la colaboraci&oacute;n</strong><br>
@@ -812,9 +823,6 @@
           <select id="themeFilter">
             <option value="">Todos los temas</option>
           </select>
-          <select id="institutionFilter">
-            <option value="">Todas las instituciones</option>
-          </select>
         </div>
 
         <div class="card" style="overflow:auto; padding: 0;">
@@ -840,15 +848,26 @@
 
     <section id="map-section">
       <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Mapa</h2>
-            <p>Muestra cuencas y sitios de estudio a partir de coordenadas o archivos GeoJSON.</p>
+          <div class="section-head">
+            <div>
+              <h2>Mapa</h2>
+              <p>Explora cuencas modeladas y su informaci&oacute;n asociada.</p>
+            </div>
           </div>
-        </div>
         <div class="card">
           <div id="map"></div>
         </div>
+      </div>
+    </section>
+
+    <section id="active-projects">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Proyectos activos</h2>
+          </div>
+        </div>
+        <div id="activeProjectsList"></div>
       </div>
     </section>
 
@@ -892,7 +911,7 @@
         <div class="section-head">
           <div>
             <h2>Contacto</h2>
-            <p>Eliana Nervi Faggiani (<a href="mailto:eliana.nervifaggiani@sydney.edu.au">eliana.nervifaggiani@sydney.edu.au</a>) · coordinación durante FPTA 358</p>
+            <p>Participantes GMIC & Eliana Nervi(<a href="mailto:eliana.nervifaggiani@sydney.edu.au">eliana.nervifaggiani@sydney.edu.au</a>) | coordinación (FPTA 358, Universidad de Sydney)</p>
           </div>
         </div>
         <div class="card">
@@ -932,6 +951,13 @@
     const RESOURCES_URL = "data/resources.json";
     const INSTITUTIONS_URL = "data/institutions.json";
     const KEYWORDS_URL = "data/keywords.json";
+
+    // Source-of-truth (Excel) CSVs. If present, the site prefers these and falls back to JSON.
+    const DATA_CSV_URL = "data/source/models.csv";
+    const RESOURCES_CSV_URL = "data/source/resources.csv";
+    const INSTITUTIONS_CSV_URL = "data/source/institutions.csv";
+    const KEYWORDS_CSV_URL = "data/source/keywords.csv";
+    const PROJECTS_URL = "data/projects.csv";
     const URUGUAY_VIEW = {
       center: [-32.8, -56.0],
       zoom: 7,
@@ -942,40 +968,203 @@
     let allResources = [];
     let allInstitutions = [];
     let allKeywords = [];
+    let allProjects = [];
     let map;
     let markersLayer;
     let geojsonLayerGroup;
 
-    async function loadData() {
-      const response = await fetch(DATA_URL);
-      if (!response.ok) {
-        throw new Error(`No se pudo cargar ${DATA_URL} (HTTP ${response.status})`);
-      }
+    function toNumber(value) {
+      const n = Number(String(value ?? "").trim());
+      return Number.isFinite(n) ? n : null;
+    }
+
+    function toBool(value, defaultValue = true) {
+      if (value == null) return defaultValue;
+      const s = String(value).trim().toLowerCase();
+      if (["1", "true", "si", "sí", "yes", "y"].includes(s)) return true;
+      if (["0", "false", "no", "n"].includes(s)) return false;
+      return defaultValue;
+    }
+
+    function splitList(value) {
+      const s = String(value ?? "").trim();
+      if (!s) return [];
+      return s
+        .replaceAll("|", ";")
+        .split(/[;,]/)
+        .map(v => v.trim())
+        .filter(Boolean);
+    }
+
+    async function loadJsonOrThrow(url) {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`No se pudo cargar ${url} (HTTP ${response.status})`);
       return await response.json();
+    }
+
+    async function loadCsvOrNull(url) {
+      const response = await fetch(url);
+      if (!response.ok) return null;
+      const text = await response.text();
+      return parseCsv(text);
+    }
+
+    function pickRow(row, ...keys) {
+      for (const key of keys) {
+        if (row[key] != null && String(row[key]).trim() !== "") return row[key];
+      }
+      return "";
+    }
+
+    function modelFromRow(row) {
+      const id = toNumber(pickRow(row, "id"));
+      const name = String(pickRow(row, "name", "nombre")).trim();
+      if (!name) return null;
+
+      const themes = String(pickRow(row, "themes", "temas")).trim();
+      const mapLink = String(pickRow(row, "map_link", "enlace_mapa")).trim();
+      const tableOrder = toNumber(pickRow(row, "table_order", "orden_tabla"));
+
+      return {
+        id: id ?? null,
+        name,
+        themes,
+        type: String(pickRow(row, "type", "tipo")).trim(),
+        scale: String(pickRow(row, "scale", "escala")).trim(),
+        status: String(pickRow(row, "status", "estado")).trim(),
+        description: String(pickRow(row, "description", "descripcion")).trim(),
+        website: String(pickRow(row, "website", "sitio_web")).trim(),
+        latitude: toNumber(pickRow(row, "latitude", "latitud")),
+        longitude: toNumber(pickRow(row, "longitude", "longitud")),
+        location: String(pickRow(row, "location", "ubicacion")).trim(),
+        keywords: splitList(pickRow(row, "keywords", "palabras_clave")),
+        map_link: mapLink,
+        table_order: tableOrder ?? 0,
+        table_name: String(pickRow(row, "table_name", "nombre_tabla", "name", "nombre")).trim(),
+        table_scale: String(pickRow(row, "table_scale", "escala_tabla", "scale", "escala")).trim(),
+        swat_model: String(pickRow(row, "swat_model", "modelo_swat")).trim(),
+        active_to_date: String(pickRow(row, "active_to_date", "activo_a_la_fecha")).trim(),
+        show_in_catalogue: toBool(pickRow(row, "show_in_catalogue", "mostrar_en_catalogo"), true)
+      };
+    }
+
+    async function loadData() {
+      const rows = await loadCsvOrNull(DATA_CSV_URL);
+      if (rows) {
+        const models = rows.map(modelFromRow).filter(Boolean);
+        return models;
+      }
+      return await loadJsonOrThrow(DATA_URL);
     }
 
     async function loadResources() {
-      const response = await fetch(RESOURCES_URL);
-      if (!response.ok) {
-        throw new Error(`No se pudo cargar ${RESOURCES_URL} (HTTP ${response.status})`);
+      const rows = await loadCsvOrNull(RESOURCES_CSV_URL);
+      if (rows) {
+        const grouped = new Map();
+        rows.forEach(row => {
+          const modelId = toNumber(pickRow(row, "model_id"));
+          const catchment = String(pickRow(row, "catchment", "cuenca")).trim();
+          const key = Number.isFinite(modelId) ? `id:${modelId}` : `name:${normalizeKey(catchment)}`;
+          const entry = grouped.get(key) || { model_id: modelId ?? null, catchment, items: [] };
+          const title = String(pickRow(row, "title", "titulo")).trim();
+          if (title) {
+            const year = toNumber(pickRow(row, "year", "anio"));
+            entry.items.push({
+              type: String(pickRow(row, "type", "tipo")).trim(),
+              title,
+              url: String(pickRow(row, "url")).trim(),
+              authors: String(pickRow(row, "authors", "autores")).trim() || undefined,
+              year: year ?? undefined
+            });
+          }
+          grouped.set(key, entry);
+        });
+        return [...grouped.values()];
       }
-      return await response.json();
+      return await loadJsonOrThrow(RESOURCES_URL);
     }
 
     async function loadInstitutions() {
-      const response = await fetch(INSTITUTIONS_URL);
-      if (!response.ok) {
-        throw new Error(`No se pudo cargar ${INSTITUTIONS_URL} (HTTP ${response.status})`);
+      const rows = await loadCsvOrNull(INSTITUTIONS_CSV_URL);
+      if (rows) {
+        return rows
+          .map(row => ({
+            name: String(pickRow(row, "name", "nombre")).trim(),
+            url: String(pickRow(row, "url")).trim()
+          }))
+          .filter(item => item.name);
       }
-      return await response.json();
+      return await loadJsonOrThrow(INSTITUTIONS_URL);
     }
 
     async function loadKeywords() {
-      const response = await fetch(KEYWORDS_URL);
-      if (!response.ok) {
-        throw new Error(`No se pudo cargar ${KEYWORDS_URL} (HTTP ${response.status})`);
+      const rows = await loadCsvOrNull(KEYWORDS_CSV_URL);
+      if (rows) {
+        return rows
+          .map(row => ({
+            model_id: toNumber(pickRow(row, "model_id")),
+            catchment: String(pickRow(row, "catchment", "cuenca")).trim(),
+            keywords: splitList(pickRow(row, "keywords", "palabras_clave"))
+          }));
       }
-      return await response.json();
+      return await loadJsonOrThrow(KEYWORDS_URL);
+    }
+
+    async function loadProjectsCsv() {
+      // Avoid browser caching during local development; projects change often.
+      const cacheBust = `v=${Date.now()}`;
+      const url = PROJECTS_URL.includes("?") ? `${PROJECTS_URL}&${cacheBust}` : `${PROJECTS_URL}?${cacheBust}`;
+      const response = await fetch(url, { cache: "no-store" });
+      if (!response.ok) {
+        throw new Error(`No se pudo cargar ${PROJECTS_URL} (HTTP ${response.status})`);
+      }
+      const text = await response.text();
+      return parseCsv(text);
+    }
+
+    function parseCsv(text) {
+      const input = String(text || "").replace(/^\uFEFF/, "");
+      const lines = input.split(/\r?\n/).filter(l => l.trim() !== "");
+      if (!lines.length) return [];
+
+      const headerLine = lines[0];
+      const delimiter = headerLine.includes(";") && !headerLine.includes(",") ? ";" : ",";
+
+      const parseLine = (line) => {
+        const out = [];
+        let current = "";
+        let inQuotes = false;
+        for (let i = 0; i < line.length; i++) {
+          const ch = line[i];
+          if (ch === "\"") {
+            if (inQuotes && line[i + 1] === "\"") {
+              current += "\"";
+              i++;
+            } else {
+              inQuotes = !inQuotes;
+            }
+            continue;
+          }
+          if (!inQuotes && ch === delimiter) {
+            out.push(current);
+            current = "";
+            continue;
+          }
+          current += ch;
+        }
+        out.push(current);
+        return out.map(v => v.trim());
+      };
+
+      const headers = parseLine(lines[0]).map(h => h.trim());
+      const rows = [];
+      for (let i = 1; i < lines.length; i++) {
+        const cols = parseLine(lines[i]);
+        const row = {};
+        headers.forEach((h, idx) => row[h] = cols[idx] ?? "");
+        rows.push(row);
+      }
+      return rows;
     }
 
     function normalizeKey(value) {
@@ -1010,6 +1199,105 @@
         return {
           ...model,
           node_keywords: safeArray(entry.keywords)
+        };
+      });
+    }
+
+    function attachActiveProjects(models, projects) {
+      const groupedById = new Map();
+      const groupedByName = new Map();
+
+      const pick = (row, ...keys) => {
+        for (const key of keys) {
+          if (row[key] != null && String(row[key]).trim() !== "") return row[key];
+        }
+        return "";
+      };
+
+      const splitMulti = (value) => {
+        const s = String(value || "").trim();
+        if (!s) return [];
+        return s
+          .replaceAll("|", ";")
+          .split(/[;,]/)
+          .map(v => v.trim())
+          .filter(Boolean);
+      };
+
+      const projectKey = (project) => {
+        const pid = String(project.project_id || "").trim();
+        if (pid) return `id:${normalizeKey(pid)}`;
+        const url = String(project.url || "").trim();
+        if (url) return `url:${url.toLowerCase()}`;
+
+        const title = normalizeKey(project.title || "");
+        const year = String(project.year || "").trim();
+        const abstract = normalizeKey(project.abstract || "");
+
+        // Many rows may use generic titles like "Proyecto Innovagro". If we only
+        // group by title, different projects collapse into one card. Include
+        // year/abstract when URL/ID are missing so catchments aggregate correctly
+        // without merging unrelated projects.
+        const parts = [`title:${title || "proyecto"}`];
+        if (year) parts.push(`year:${year}`);
+        if (abstract) parts.push(`abs:${abstract.slice(0, 80)}`);
+        return parts.join("|");
+      };
+
+      projects.forEach(row => {
+        const rawModelIds = splitMulti(pick(row, "model_id", "id_modelo", "model_ids", "ids_modelo"));
+        const modelIds = rawModelIds
+          .map(v => Number(v))
+          .filter(n => Number.isFinite(n));
+
+        const catchmentNames = splitMulti(pick(row, "cuenca", "catchment", "cuencas", "catchments", "modelo", "nombre", "model"));
+        const project = {
+          project_id: pick(row, "project_id", "proyect_id", "id_proyecto", "proyecto_id", "id_proyect", "id_proyecto"),
+          model_ids: modelIds,
+          model_id: modelIds.length ? modelIds[0] : null,
+          catchment: catchmentNames.join(" · "),
+          title: pick(row, "proyecto", "title", "nombre_proyecto"),
+          abstract: pick(row, "resumen", "abstract", "descripcion", "description"),
+          url: pick(row, "url", "link"),
+          year: pick(row, "anio", "year"),
+          status: pick(row, "estado", "status")
+        };
+        project.key = projectKey(project);
+
+        modelIds.forEach(id => {
+          groupedById.set(id, [...(groupedById.get(id) || []), project]);
+        });
+
+        if (!modelIds.length) {
+          const singleId = Number(pick(row, "model_id", "id_modelo"));
+          if (Number.isFinite(singleId)) {
+            groupedById.set(singleId, [...(groupedById.get(singleId) || []), project]);
+          }
+        }
+        catchmentNames.forEach(name => {
+          const nameKey = normalizeKey(name);
+          if (!nameKey) return;
+          groupedByName.set(nameKey, [...(groupedByName.get(nameKey) || []), project]);
+        });
+      });
+
+      const isActive = (status) => {
+        const s = String(status || "").toLowerCase().trim();
+        if (!s) return true;
+        // "Proyectos en marcha" incluye activos y planificados (muchos aun no tienen URL).
+        return ["activo", "active", "en curso", "ongoing", "planificado", "planned", "proximo", "próximo"].includes(s);
+      };
+
+      return models.map(model => {
+        const list =
+          groupedById.get(Number(model.id)) ||
+          groupedByName.get(normalizeKey(model.name)) ||
+          groupedByName.get(normalizeKey(model.table_name)) ||
+          [];
+
+        return {
+          ...model,
+          active_projects: list.filter(p => isActive(p.status))
         };
       });
     }
@@ -1094,12 +1382,38 @@
             const type = escapeHtml(item.type || "Link");
             const title = escapeHtml(item.title);
             const authors = item.authors ? `<span class="resource-authors">${escapeHtml(item.authors)}</span>` : "";
-            const year = item.year ? ` <span class="resource-authors">${escapeHtml(item.year)}</span>` : "";
+            const yearNumber = Number(item.year);
+            const year = Number.isFinite(yearNumber) && Number.isInteger(yearNumber) && yearNumber >= 1900
+              ? ` <span class="resource-authors">${escapeHtml(yearNumber)}</span>`
+              : "";
             const url = item.url ? escapeHtml(item.url) : "";
             const label = url
               ? `<a href="${url}" target="_blank" rel="noopener">${title}</a>`
               : title;
             return `<li><span class="resource-type">${type}:</span> ${label}${authors}${year}</li>`;
+          }).join("")}
+        </ul>
+      `;
+    }
+
+    function activeProjectsHtml(items) {
+      const list = safeArray(items).filter(p => p && (p.title || p.abstract || p.url));
+      if (!list.length) return `<span class="empty-message">Sin proyectos activos por ahora.</span>`;
+
+      return `
+        <ul class="resource-list">
+          ${list.map(p => {
+            const title = escapeHtml(p.title || "Proyecto");
+            const year = p.year ? ` <span class="resource-authors">${escapeHtml(p.year)}</span>` : "";
+            const url = p.url ? escapeHtml(p.url) : "";
+            const abstract = p.abstract ? `<div class="drawer-note" style="margin-top:0.25rem;">${escapeHtml(p.abstract)}</div>` : "";
+            const catchments = splitList(p.catchment).length
+              ? `<div class="tag-row" style="margin-top:0.25rem;">${splitList(p.catchment).map(c => `<span class="pill">${escapeHtml(c)}</span>`).join("")}</div>`
+              : "";
+            const label = url
+              ? `<a href="${url}" target="_blank" rel="noopener">${title}</a>`
+              : title;
+            return `<li>${label}${year}${catchments}${abstract}</li>`;
           }).join("")}
         </ul>
       `;
@@ -1146,16 +1460,22 @@
       if (!d) return;
 
       const resources = getResources(d);
+      const activeProjects = safeArray(d.active_projects);
       const drawer = document.getElementById("metadataDrawer");
       const backdrop = document.getElementById("metadataBackdrop");
       document.getElementById("metadataTitle").textContent = d.table_name || d.name || "Metadatos";
       document.getElementById("metadataSubtitle").textContent =
         `${resourceCount(d)} producto${resourceCount(d) === 1 ? "" : "s"} vinculado${resourceCount(d) === 1 ? "" : "s"}`;
       document.getElementById("metadataBody").innerHTML = `
-        <p class="drawer-note">Edita nombres y enlaces en <code>data/resources.json</code>.</p>
+        <p class="drawer-note">
+          ${activeProjects.length} proyecto${activeProjects.length === 1 ? "" : "s"} activo${activeProjects.length === 1 ? "" : "s"} ·
+          ${resources.length} publicaci&oacute;n${resources.length === 1 ? "" : "es"} / producto${resources.length === 1 ? "" : "s"} ·
+          ${safeArray(d.node_keywords).length} palabra${safeArray(d.node_keywords).length === 1 ? "" : "s"} clave
+        </p>
         <h4>Palabras clave</h4>
-        <p class="drawer-note">Edita estas palabras en <code>data/keywords.json</code>.</p>
         ${keywordsHtml(safeArray(d.node_keywords))}
+        <h4>Proyectos activos</h4>
+        ${activeProjectsHtml(activeProjects)}
         <h4>Publicaciones, informes y proyectos</h4>
         ${resourcesHtml(resources)}
       `;
@@ -1185,20 +1505,23 @@
       const props = featureProps || {};
       const title = d.name || props.nombrec3 || props.popup || "Untitled";
       const region = d.region || d.location || props.nombrec3 || "";
-      const areaLine = props.area ? `Area: ${escapeHtml(props.area)} km2<br>` : "";
       const resources = getResources(d);
       const count = resourceCount(d);
+      const activeProjects = safeArray(d.active_projects);
+      const projectsLine = activeProjects.length
+        ? `<div class="drawer-note"><strong>Proyectos activos:</strong> ${escapeHtml(activeProjects.slice(0, 2).map(p => p.title).join(" · "))}${activeProjects.length > 2 ? " ..." : ""}</div>`
+        : "";
 
       return `
         <strong>${escapeHtml(title)}</strong><br>
         ${escapeHtml(region)}<br>
         ${escapeHtml(d.description || "")}<br>
-        ${areaLine}
+        ${projectsLine}
         <strong>${count}</strong> producto${count === 1 ? "" : "s"} vinculado${count === 1 ? "" : "s"}
         <div class="popup-resources">${metadataButtonHtml(d, "Metadatos")}</div>
         ${d.data_link ? `<a href="${escapeHtml(d.data_link)}" target="_blank" rel="noopener">Datos</a><br>` : ""}
         ${d.report_link ? `<a href="${escapeHtml(d.report_link)}" target="_blank" rel="noopener">Informe</a><br>` : ""}
-        ${d.publication_link ? `<a href="${escapeHtml(d.publication_link)}" target="_blank" rel="noopener">Publicación</a><br>` : ""}
+        ${d.publication_link ? `<a href="${escapeHtml(d.publication_link)}" target="_blank" rel="noopener">Publicaci&oacute;n</a><br>` : ""}
         ${(d.website || d.link) ? `<a href="${escapeHtml(d.website || d.link)}" target="_blank" rel="noopener">Sitio web</a>` : ""}
       `;
     }
@@ -1206,21 +1529,17 @@
     function getFilteredData() {
       const searchValue = document.getElementById("searchInput").value.trim().toLowerCase();
       const themeValue = document.getElementById("themeFilter").value;
-      const institutionValue = document.getElementById("institutionFilter").value;
 
       return allData.filter(d => d.show_in_catalogue !== false).filter(d => {
         const text = [
           d.name,
           d.table_name,
-          d.table_themes,
+          d.themes,
           d.swat_model,
           d.active_to_date,
-          d.theme,
-          d.institution,
           d.scale,
           d.status,
           d.description,
-          ...(safeArray(d.inputs)),
           ...(safeArray(d.keywords)),
           ...(safeArray(d.applications)),
           ...getResources(d).flatMap(item => [item.type, item.title])
@@ -1230,23 +1549,19 @@
           .toLowerCase();
 
         const matchesSearch = !searchValue || text.includes(searchValue);
-        const matchesTheme = !themeValue || splitThemes(d.table_themes || d.theme).includes(themeValue);
-        const matchesInstitution = !institutionValue || d.institution === institutionValue;
+        const matchesTheme = !themeValue || splitThemes(d.themes || d.table_themes || d.theme).includes(themeValue);
 
-        return matchesSearch && matchesTheme && matchesInstitution;
+        return matchesSearch && matchesTheme;
       });
     }
 
     function populateFilters(data) {
       const themeFilter = document.getElementById("themeFilter");
-      const institutionFilter = document.getElementById("institutionFilter");
 
       const catalogueData = data.filter(d => d.show_in_catalogue !== false);
-      const themes = [...new Set(catalogueData.flatMap(d => splitThemes(d.table_themes || d.theme)))].sort();
-      const institutions = [...new Set(catalogueData.map(d => d.institution).filter(Boolean))].sort();
+      const themes = [...new Set(catalogueData.flatMap(d => splitThemes(d.themes || d.table_themes || d.theme)))].sort();
 
       themeFilter.innerHTML = `<option value="">Todos los temas</option>`;
-      institutionFilter.innerHTML = `<option value="">Todas las instituciones</option>`;
 
       themes.forEach(theme => {
         const option = document.createElement("option");
@@ -1254,23 +1569,16 @@
         option.textContent = theme;
         themeFilter.appendChild(option);
       });
-
-      institutions.forEach(institution => {
-        const option = document.createElement("option");
-        option.value = institution;
-        option.textContent = institution;
-        institutionFilter.appendChild(option);
-      });
     }
 
     function renderStats(data) {
       const catalogueData = data.filter(d => d.show_in_catalogue !== false);
-      const institutions = new Set(catalogueData.map(d => d.institution).filter(Boolean));
-      const themes = new Set(catalogueData.flatMap(d => splitThemes(d.table_themes || d.theme)));
+      const institutionsCount = Array.isArray(allInstitutions) ? allInstitutions.length : 0;
+      const themes = new Set(catalogueData.flatMap(d => splitThemes(d.themes || d.table_themes || d.theme)));
       const resources = catalogueData.flatMap(d => getResources(d));
 
       document.getElementById("statModels").textContent = catalogueData.length;
-      document.getElementById("statInstitutions").textContent = institutions.size;
+      document.getElementById("statInstitutions").textContent = institutionsCount;
       document.getElementById("statThemes").textContent = themes.size;
       document.getElementById("statAcademicWorks").textContent = resources.filter(isAcademicWork).length;
       document.getElementById("statTheses").textContent = resources.filter(isThesis).length;
@@ -1299,7 +1607,7 @@
         const row = document.createElement("tr");
         row.innerHTML = `
           <td><strong>${escapeHtml(d.table_name || d.name || "")}</strong></td>
-          <td>${escapeHtml(d.table_themes || d.theme || "")}</td>
+          <td>${escapeHtml(d.themes || d.table_themes || d.theme || "")}</td>
           <td>${escapeHtml(d.table_scale || d.scale || "")}</td>
           <td>${escapeHtml(d.swat_model || "")}</td>
           <td><span class="count-pill" style="background:${resourceColor(count)}; color:${count >= 2 ? "white" : "#1f2937"}">${count}</span></td>
@@ -1308,6 +1616,93 @@
         `;
         tbody.appendChild(row);
       });
+    }
+
+    function renderActiveProjectsSection() {
+      const container = document.getElementById("activeProjectsList");
+      if (!container) return;
+
+      const projectKeyFor = (p) =>
+        p.key ||
+        (p.url
+          ? `url:${String(p.url).toLowerCase()}`
+          : `title:${normalizeKey(p.title || "")}`);
+
+      // Build a catchment-tag map from the full dataset, so a project can show
+      // all of its catchments even when the user is filtering the table.
+      const catchmentsByKey = new Map();
+      allData
+        .flatMap(d => safeArray(d.active_projects).map(p => ({ ...p, model: d })))
+        .forEach(p => {
+          const key = projectKeyFor(p);
+          if (!key) return;
+          const set = catchmentsByKey.get(key) || new Set();
+          set.add(p.model?.table_name || p.model?.name || "");
+          catchmentsByKey.set(key, set);
+        });
+
+      const filtered = getFilteredData();
+      const rows = filtered.flatMap(d =>
+        safeArray(d.active_projects).map(p => ({ ...p, model: d }))
+      );
+
+      // Group same project across multiple catchments (same URL or same title).
+      const grouped = new Map();
+      rows.forEach(p => {
+        const key = projectKeyFor(p);
+        const entry = grouped.get(key) || {
+          key,
+          title: p.title || "Proyecto",
+          abstract: p.abstract || "",
+          url: p.url || "",
+          year: p.year || "",
+          status: p.status || "",
+          catchments: new Set()
+        };
+        const allCatchments = catchmentsByKey.get(key);
+        if (allCatchments) {
+          allCatchments.forEach(c => entry.catchments.add(c));
+        } else {
+          entry.catchments.add(p.model?.table_name || p.model?.name || "");
+        }
+        // Keep the first non-empty abstract/year we find.
+        if (!entry.abstract && p.abstract) entry.abstract = p.abstract;
+        if (!entry.year && p.year) entry.year = p.year;
+        grouped.set(key, entry);
+      });
+
+      const projects = [...grouped.values()]
+        .map(p => ({ ...p, catchments: [...p.catchments].filter(Boolean).sort() }))
+        .sort((a, b) => String(a.title).localeCompare(String(b.title)));
+
+      if (!projects.length) {
+        container.innerHTML = `<p class="empty-message">No hay proyectos activos cargados para los filtros actuales.</p>`;
+        return;
+      }
+
+      container.innerHTML = `
+        <div class="grid-2">
+          ${projects.map(p => {
+            const title = escapeHtml(p.title || "Proyecto");
+            const abstract = escapeHtml(p.abstract || "");
+            const year = p.year ? `<span class="pill">${escapeHtml(p.year)}</span>` : "";
+            const cuencas = p.catchments.length
+              ? `<div class="tag-row">${p.catchments.map(c => `<span class="pill">${escapeHtml(c)}</span>`).join("")}</div>`
+              : "";
+            const url = p.url ? escapeHtml(p.url) : "";
+            const link = url ? `<a href="${url}" target="_blank" rel="noopener">${title}</a>` : title;
+            return `
+              <div class="card">
+                <div style="display:flex; gap:0.5rem; align-items:center; flex-wrap:wrap;">
+                  <strong>${link}</strong>${year}
+                </div>
+                ${cuencas}
+                ${abstract ? `<p style="margin:0.5rem 0 0;">${abstract}</p>` : ""}
+              </div>
+            `;
+          }).join("")}
+        </div>
+      `;
     }
 
     function renderKeywordNetwork() {
@@ -1451,9 +1846,28 @@
 
       const rows = getFilteredData()
         .flatMap(d => getResources(d))
-        .filter(item => Number.isInteger(Number(item.year)));
-      const counts = new Map();
+        .filter(item => {
+          const year = Number(item.year);
+          return Number.isFinite(year) && Number.isInteger(year) && year >= 1900;
+        });
+
+      const publicationKey = (item) => {
+        const year = Number(item.year);
+        const url = String(item.url || "").trim().toLowerCase();
+        if (url) return `url:${url}|${year}`;
+        const title = normalizeKey(item.title || "");
+        const authors = normalizeKey(item.authors || "");
+        return `t:${title}|a:${authors}|${year}`;
+      };
+
+      // Deduplicate publications across catchments (same URL/DOI or same title+authors+year).
+      const unique = new Map();
       rows.forEach(item => {
+        unique.set(publicationKey(item), item);
+      });
+
+      const counts = new Map();
+      [...unique.values()].forEach(item => {
         const year = Number(item.year);
         counts.set(year, (counts.get(year) || 0) + 1);
       });
@@ -1606,7 +2020,8 @@
         allResources = await loadResources();
         allInstitutions = await loadInstitutions();
         allKeywords = await loadKeywords();
-        allData = attachKeywords(attachResources(models, allResources), allKeywords);
+        allProjects = await loadProjectsCsv();
+        allData = attachActiveProjects(attachKeywords(attachResources(models, allResources), allKeywords), allProjects);
 
         renderInstitutionList(allInstitutions);
         populateFilters(allData);
@@ -1615,12 +2030,14 @@
         await renderMap();
         renderKeywordNetwork();
         renderPublicationHistogram();
+        renderActiveProjectsSection();
 
         document.getElementById("searchInput").addEventListener("input", async () => {
           renderModels();
           await renderMap();
           renderKeywordNetwork();
           renderPublicationHistogram();
+          renderActiveProjectsSection();
         });
 
         document.getElementById("themeFilter").addEventListener("change", async () => {
@@ -1628,13 +2045,7 @@
           await renderMap();
           renderKeywordNetwork();
           renderPublicationHistogram();
-        });
-
-        document.getElementById("institutionFilter").addEventListener("change", async () => {
-          renderModels();
-          await renderMap();
-          renderKeywordNetwork();
-          renderPublicationHistogram();
+          renderActiveProjectsSection();
         });
 
         window.addEventListener("resize", () => {
